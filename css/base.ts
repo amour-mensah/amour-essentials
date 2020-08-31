@@ -27,6 +27,7 @@ export const GlobalStyles = createGlobalStyle`
     display: block;
   }
   body {
+    font-family: 'Gotham Book', sans-serif;     
     line-height: 1;
   }
   ol, ul {
