@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { theme as t } from '../../css/theme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSearch,
@@ -13,7 +14,8 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  opacity: 0.7;
+  background: ${t.colors.white};
+  opacity: 0.8;
 
   ul {
     &:first-of-type {
@@ -40,7 +42,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
   font-weight: 200;
 `;
 
-export default function Header() {
+export default function Nav() {
   return (
     <StyledNav>
       <img src='/AmourEssentials-Logo.png' alt='Amour Essentials Logo' />
