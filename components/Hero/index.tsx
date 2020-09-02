@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { theme as t } from '../../css/theme';
+import { ActionButton } from '../../css/common';
 
 const StyledHero = styled.section`
   background: url('/pexels-photo-54283.png');
@@ -37,16 +38,6 @@ const Italicized = styled.span`
   font-style: italic;
 `;
 
-const StyledActionButton = styled.button`
-  border: none;
-  padding: 1rem 2.5rem;
-  background-color: ${t.colors.white};
-  font-size: 1.2rem;
-  color: ${t.colors.primary};
-  text-transform: uppercase;
-  letter-spacing: 1px;
-`;
-
 export default function Hero() {
   return (
     <StyledHero>
@@ -56,7 +47,7 @@ export default function Hero() {
           Description Text Garamond Premier Pro Regular or{' '}
           <Italicized>Italic</Italicized> 45pt
         </p>
-        <StyledActionButton>Action Button</StyledActionButton>
+        <ActionButton>Action Button</ActionButton>
       </StyledHeroCTA>
     </StyledHero>
   );
