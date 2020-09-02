@@ -1,4 +1,4 @@
-import 'styled-components'
+import 'styled-components';
 
 interface IColors {
   primary: string;
@@ -7,8 +7,14 @@ interface IColors {
   grey: string;
 }
 
+interface IFonts {
+  primary: string;
+  secondary: string;
+}
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: IColors;
+    fonts: IFonts;
   }
 }
