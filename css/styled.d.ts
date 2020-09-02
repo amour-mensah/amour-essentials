@@ -5,6 +5,7 @@ interface IColors {
   white: string;
   black: string;
   grey: string;
+  lightGrey: string;
 }
 
 interface IFonts {
