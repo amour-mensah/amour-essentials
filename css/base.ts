@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { theme as t } from './theme';
 
 export const GlobalStyles = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -28,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
     display: block;
   }
   body {
-    font-family: 'Gotham Book', sans-serif;     
+    font-family: ${t.fonts.primary};     
     line-height: 1;
   }
   ol, ul {
