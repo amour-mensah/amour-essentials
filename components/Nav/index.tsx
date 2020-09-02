@@ -35,17 +35,31 @@ const StyledNav = styled.nav`
 const StyledLink = styled.a`
   font-size: 1.5rem;
   font-weight: 200;
+  cursor: pointer;
+
+  &:hover {
+    color: ${t.colors.primary};
+  }
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
   font-size: 1.5rem;
   font-weight: 200;
+  cursor: pointer;
+
+  &:hover {
+    color: ${t.colors.primary};
+  }
 `;
 
 export default function Nav() {
   return (
     <StyledNav>
-      <img src='/AmourEssentials-Logo.png' alt='Amour Essentials Logo' />
+      <Link href='/'>
+        <a>
+          <img src='/AmourEssentials-Logo.png' alt='Amour Essentials Logo' />
+        </a>
+      </Link>
       <ul>
         <li>
           <Link href='/'>
