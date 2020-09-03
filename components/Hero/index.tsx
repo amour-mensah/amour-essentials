@@ -5,6 +5,7 @@ import { ActionButton } from '../../css/common';
 const StyledHero = styled.section`
   background: url('/pexels-photo-54283.png');
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: 100%;
   width: 100%;
   height: 100vh;
