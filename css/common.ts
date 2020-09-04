@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import { theme as t } from './theme';
 
-enum VARIANT {
-  PRIMARY,
-  SECONDARY
-}
-
 interface IProps {
   variant?: VARIANT;
 }
@@ -19,7 +14,7 @@ export const ActionButton = styled.button<IProps>`
   cursor: pointer;
   ${props => {
     switch (props.variant) {
-      case VARIANT.SECONDARY:
+      case 'secondary':
         return `
           background-color: ${t.colors.primary};
           color: ${t.colors.white};
@@ -29,7 +24,7 @@ export const ActionButton = styled.button<IProps>`
             color: ${t.colors.white};
           }
         `;
-      case VARIANT.PRIMARY:
+      case 'primary':
       default:
         return `
           background-color: ${t.colors.white};
