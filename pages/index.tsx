@@ -3,6 +3,7 @@ import { theme as t } from '../css/theme';
 import Nav from '../components/Nav';
 import Hero from '../components/Hero';
 import Feature from '../components/Feature';
+import BigCouch from '../components/BigCouch';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <Feature />
       <Feature order={2} />
+      <BigCouch />
     </>
   );
 }
