@@ -2,6 +2,7 @@ import 'styled-components';
 
 interface IColors {
   primary: string;
+  light: string;
   white: string;
   black: string;
   grey: string;
