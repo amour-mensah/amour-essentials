@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Feature from '../components/Feature';
 import BigCouch from '../components/BigCouch';
 import NewArrivals from '../components/NewArrivals';
+import Reviews from '../components/Reviews';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Feature order={2} />
       <BigCouch />
       <NewArrivals />
+      <Reviews />
     </>
   );
 }
