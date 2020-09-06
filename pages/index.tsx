@@ -6,6 +6,7 @@ import Feature from '../components/Feature';
 import BigCouch from '../components/BigCouch';
 import NewArrivals from '../components/NewArrivals';
 import Reviews from '../components/Reviews';
+import MailingList from '../components/MailingList';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <BigCouch />
       <NewArrivals />
       <Reviews />
+      <MailingList />
     </>
   );
 }
