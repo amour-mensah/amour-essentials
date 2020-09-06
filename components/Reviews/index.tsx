@@ -5,7 +5,7 @@ import RightArrow from '../../public/right-arrow.svg';
 
 const StyledReviews = styled.section`
   width: 100%;
-  padding: 2rem 0;
+  padding: 3rem 0;
 
   h3 {
     font-size: 2rem;
