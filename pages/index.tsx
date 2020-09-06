@@ -7,6 +7,7 @@ import BigCouch from '../components/BigCouch';
 import NewArrivals from '../components/NewArrivals';
 import Reviews from '../components/Reviews';
 import MailingList from '../components/MailingList';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <NewArrivals />
       <Reviews />
       <MailingList />
+      <Footer />
     </>
   );
 }
