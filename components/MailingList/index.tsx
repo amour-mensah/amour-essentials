@@ -56,6 +56,10 @@ const StyledInput = styled.div`
     width: 40rem;
     font-size: 1.2rem;
 
+    @media (max-width: 1024px) {
+      width: 80%;
+    }
+
     :focus {
       outline: none;
     }
@@ -63,6 +67,10 @@ const StyledInput = styled.div`
     ::placeholder {
       font-size: 1.2rem;
       color: ${t.colors.grey};
+
+      @media (max-width: 1024px) {
+        font-size: 1rem;
+      }
     }
   }
 `;

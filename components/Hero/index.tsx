@@ -9,6 +9,10 @@ const StyledHero = styled.section`
   background-size: 100%;
   width: 100%;
   height: 100vh;
+
+  @media (max-width: 1024px) {
+    background-size: cover;
+  }
 `;
 
 const StyledHeroCTA = styled.div`
@@ -25,6 +29,10 @@ const StyledHeroCTA = styled.div`
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 2rem;
+
+    @media (max-width: 1024px) {
+      font-size: 2rem;
+    }
   }
 
   p {
@@ -32,6 +40,10 @@ const StyledHeroCTA = styled.div`
     font-family: ${t.fonts.secondary};
     font-weight: 300;
     margin-bottom: 4rem;
+
+    @media (max-width: 1024px) {
+      font-size: 1.8rem;
+    }
   }
 `;
 

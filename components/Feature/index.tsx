@@ -35,6 +35,11 @@ const StyledTextContainer = styled.div`
     text-transform: uppercase;
     margin-bottom: 3rem;
     letter-spacing: 1.5px;
+
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
   }
 
   p {
@@ -42,6 +47,11 @@ const StyledTextContainer = styled.div`
     font-family: ${t.fonts.secondary};
     letter-spacing: 1.5px;
     margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
 
     span {
       font-style: italic;

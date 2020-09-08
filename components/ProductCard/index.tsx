@@ -17,6 +17,12 @@ const StyledProductImage = styled.div`
   margin: 0 1.5rem 2rem 1.5rem;
   background-color: ${t.colors.white};
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  @media (max-width: 1024px) {
+    width: 10rem;
+    height: 14rem;
+    margin: 0 0.8rem 2rem 0.8rem;
+  }
 `;
 
 export default function ProductCard() {

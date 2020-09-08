@@ -10,20 +10,28 @@ import {
 
 const StyledNav = styled.nav`
   width: 100%;
+  height: auto;
   padding: 2rem 1rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-flow: row wrap;
   background: ${t.colors.white};
   opacity: 0.8;
 
-  img {
-    width: 18rem;
+  @media (max-width: 1024px) {
+    flex: 0 0 100%;
+    padding: 1.6rem 0.8rem;
+    justify-content: center;
   }
 
   ul {
     &:first-of-type {
       margin: 0 8rem;
+
+      @media (max-width: 1024px) {
+        margin: 0 2.5rem 0 0;
+      }
     }
 
     li {
@@ -33,6 +41,18 @@ const StyledNav = styled.nav`
         margin-right: 2.5rem;
       }
     }
+  }
+`;
+
+const StyledLogoContainer = styled.div`
+  img {
+    width: 18rem;
+  }
+
+  @media (max-width: 1280px) {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -59,11 +79,13 @@ const StyledIcon = styled(FontAwesomeIcon)`
 export default function Nav() {
   return (
     <StyledNav>
-      <Link href='/'>
-        <a>
-          <img src='/AmourEssentials-Logo.png' alt='Amour Essentials Logo' />
-        </a>
-      </Link>
+      <StyledLogoContainer>
+        <Link href='/'>
+          <a>
+            <img src='/AmourEssentials-Logo.png' alt='Amour Essentials Logo' />
+          </a>
+        </Link>
+      </StyledLogoContainer>
       <ul>
         <li>
           <Link href='/'>

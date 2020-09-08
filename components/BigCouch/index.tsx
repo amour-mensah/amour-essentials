@@ -33,12 +33,20 @@ const StyledImageDiv = styled.div`
       text-transform: uppercase;
       letter-spacing: 1.5px;
       margin-bottom: 2rem;
+
+      @media (max-width: 1024px) {
+        font-size: 1.6rem;
+      }
     }
 
     p {
       font-size: 2rem;
       font-family: ${t.fonts.secondary};
       margin-bottom: 2rem;
+
+      @media (max-width: 1024px) {
+        font-size: 1.4rem;
+      }
 
       span {
         font-style: italic;
