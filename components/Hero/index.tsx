@@ -21,7 +21,7 @@ const StyledHeroCTA = styled.div`
   color: ${t.colors.white};
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 2rem;

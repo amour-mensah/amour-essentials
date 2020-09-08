@@ -31,7 +31,7 @@ const StyledTextContainer = styled.div`
   }};
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     text-transform: uppercase;
     margin-bottom: 3rem;
     letter-spacing: 1.5px;

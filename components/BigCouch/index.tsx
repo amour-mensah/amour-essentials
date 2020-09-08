@@ -14,7 +14,7 @@ const StyledImageDiv = styled.div`
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 70%;
+  width: 80%;
   height: 90%;
   margin: auto;
   position: relative;
@@ -29,7 +29,7 @@ const StyledImageDiv = styled.div`
     width: max-content;
 
     h3 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       margin-bottom: 2rem;

@@ -10,23 +10,27 @@ import {
 
 const StyledNav = styled.nav`
   width: 100%;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   background: ${t.colors.white};
   opacity: 0.8;
 
+  img {
+    width: 18rem;
+  }
+
   ul {
     &:first-of-type {
-      margin: 0 15rem;
+      margin: 0 8rem;
     }
 
     li {
       display: inline-block;
 
       &:not(:last-of-type) {
-        margin-right: 3.5rem;
+        margin-right: 2.5rem;
       }
     }
   }
