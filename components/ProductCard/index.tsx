@@ -12,8 +12,8 @@ const StyledProductCard = styled.div`
 `;
 
 const StyledProductImage = styled.div`
-  width: 20rem;
-  height: 25rem;
+  width: 12rem;
+  height: 18rem;
   margin: 0 1.5rem 2rem 1.5rem;
   background-color: ${t.colors.white};
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
