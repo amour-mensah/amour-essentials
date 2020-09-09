@@ -32,6 +32,10 @@ const StyledNav = styled.nav`
       @media (max-width: 1024px) {
         margin: 0 2.5rem 0 0;
       }
+
+      @media (max-width: 425px) {
+        margin: 0 0 2rem 0;
+      }
     }
 
     li {

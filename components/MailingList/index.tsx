@@ -13,6 +13,10 @@ const StyledMailingList = styled.section`
     color: #000000;
     text-transform: uppercase;
     text-align: center;
+
+    @media (max-width: 425px) {
+      font-size: 1.6rem;
+    }
   }
 
   p {
@@ -20,6 +24,10 @@ const StyledMailingList = styled.section`
     font-family: ${t.fonts.secondary};
     font-size: 1.4rem;
     margin: 6rem 0;
+
+    @media (max-width: 425px) {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -27,6 +35,10 @@ const StyledForm = styled.form`
   text-align: center;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 425px) {
+    display: block;
+  }
 
   button {
     background-color: transparent;
@@ -36,6 +48,10 @@ const StyledForm = styled.form`
     text-transform: uppercase;
     padding: 0.8rem 1rem;
     cursor: pointer;
+
+    @media (max-width: 425px) {
+      margin: 2rem auto 0 auto;
+    }
 
     :hover {
       background-color: ${t.colors.grey};

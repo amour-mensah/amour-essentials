@@ -7,6 +7,10 @@ const StyledCouchSection = styled.section`
   height: 70vh;
   padding: 2rem 0;
   text-align: center;
+
+  @media (max-width: 425px) {
+    height: 50vh;
+  }
 `;
 
 const StyledImageDiv = styled.div`
@@ -20,6 +24,11 @@ const StyledImageDiv = styled.div`
   position: relative;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
+  @media (max-width: 425px) {
+    width: 100%;
+    height: 80%;
+  }
+
   div {
     position: absolute;
     top: 50%;
@@ -27,6 +36,10 @@ const StyledImageDiv = styled.div`
     transform: translate(-50%, -50%);
     color: ${t.colors.white};
     width: max-content;
+
+    @media (max-width: 425px) {
+      width: auto;
+    }
 
     h3 {
       font-size: 2.5rem;
@@ -37,6 +50,10 @@ const StyledImageDiv = styled.div`
       @media (max-width: 1024px) {
         font-size: 1.6rem;
       }
+
+      @media (max-width: 425px) {
+        font-size: 1.4rem;
+      }
     }
 
     p {
@@ -46,6 +63,10 @@ const StyledImageDiv = styled.div`
 
       @media (max-width: 1024px) {
         font-size: 1.4rem;
+      }
+
+      @media (max-width: 425px) {
+        font-size: 1.2rem;
       }
 
       span {

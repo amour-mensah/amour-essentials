@@ -21,12 +21,21 @@ const StyledReviewContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 425px) {
+    display: block;
+  }
 `;
 
 const StyledImageContainer = styled.div`
   width: 30%;
   overflow: hidden;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  @media (max-width: 425px) {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 
   img {
     width: 100%;
@@ -38,8 +47,18 @@ const StyledTextContainer = styled.div`
   margin: 0 3rem;
   width: 30%;
 
+  @media (max-width: 425px) {
+    width: 100%;
+    margin: 0;
+    padding: 0 2rem;
+  }
+
   div {
     margin-bottom: 3rem;
+
+    @media (max-width: 425px) {
+      text-align: center;
+    }
   }
 
   p {
@@ -62,20 +81,20 @@ const StyledStar = styled(Star)`
   }
 `;
 
-const StyledRightArrow = styled(RightArrow)`
-  background-color: ${t.colors.grey};
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 50%;
-  padding: 0.6rem;
-  margin-left: 2rem;
-  margin-bottom: 6.25rem;
-  cursor: pointer;
+// const StyledRightArrow = styled(RightArrow)`
+//   background-color: ${t.colors.grey};
+//   width: 1.8rem;
+//   height: 1.8rem;
+//   border-radius: 50%;
+//   padding: 0.6rem;
+//   margin-left: 2rem;
+//   margin-bottom: 6.25rem;
+//   cursor: pointer;
 
-  &:hover {
-    background-color: ${t.colors.primary};
-  }
-`;
+//   &:hover {
+//     background-color: ${t.colors.primary};
+//   }
+// `;
 
 export default function Reviews() {
   return (
@@ -99,7 +118,7 @@ export default function Reviews() {
           </p>
           <p>- Alice Johnson from Toronto, ON</p>
         </StyledTextContainer>
-        <StyledRightArrow />
+        {/* <StyledRightArrow /> */}
       </StyledReviewContainer>
     </StyledReviews>
   );

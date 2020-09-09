@@ -36,5 +36,10 @@ export const ActionButton = styled.button<IProps>`
           }
         `;
     }
-  }}
+  }};
+
+  @media (max-width: 425px) {
+    padding: 1rem 1.8rem;
+    font-size: 1rem;
+  }
 `;

@@ -24,6 +24,11 @@ const StyledHeroCTA = styled.div`
   width: max-content;
   color: ${t.colors.white};
 
+  @media (max-width: 425px) {
+    top: 60%;
+    width: 15.5rem;
+  }
+
   h1 {
     font-size: 3rem;
     text-transform: uppercase;
@@ -32,6 +37,12 @@ const StyledHeroCTA = styled.div`
 
     @media (max-width: 1024px) {
       font-size: 2rem;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 1.8rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -43,6 +54,10 @@ const StyledHeroCTA = styled.div`
 
     @media (max-width: 1024px) {
       font-size: 1.8rem;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 1.4rem;
     }
   }
 `;

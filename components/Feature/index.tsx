@@ -12,6 +12,11 @@ const StyledFeature = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 425px) {
+    display: block;
+    text-align: center;
+  }
 `;
 
 const StyledTextContainer = styled.div`
@@ -29,6 +34,10 @@ const StyledTextContainer = styled.div`
       `;
     }
   }};
+
+  @media (max-width: 425px) {
+    margin: 0 0 2rem 0;
+  }
 
   h2 {
     font-size: 2.8rem;
@@ -74,6 +83,10 @@ const StyledImageContainer = styled.div`
       `;
     }
   }};
+
+  @media (max-width: 425px) {
+    margin: auto;
+  }
 
   img {
     width: 100%;

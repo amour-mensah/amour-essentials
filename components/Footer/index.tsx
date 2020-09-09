@@ -20,6 +20,11 @@ const StyledLinkContainer = styled.div`
   display: flex;
   justify-content: space-around;
 
+  @media (max-width: 425px) {
+    display: block;
+    text-align: center;
+  }
+
   h4 {
     text-transform: uppercase;
     font-weight: bold;

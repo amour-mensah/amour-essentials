@@ -26,20 +26,20 @@ const StyledNewArrival = styled.section`
   }
 `;
 
-const StyledRightArrow = styled(RightArrow)`
-  background-color: ${t.colors.grey};
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 50%;
-  padding: 0.6rem;
-  margin-left: 2rem;
-  margin-bottom: 6.25rem;
-  cursor: pointer;
+// const StyledRightArrow = styled(RightArrow)`
+//   background-color: ${t.colors.grey};
+//   width: 1.8rem;
+//   height: 1.8rem;
+//   border-radius: 50%;
+//   padding: 0.6rem;
+//   margin-left: 2rem;
+//   margin-bottom: 6.25rem;
+//   cursor: pointer;
 
-  &:hover {
-    background-color: ${t.colors.white};
-  }
-`;
+//   &:hover {
+//     background-color: ${t.colors.white};
+//   }
+// `;
 
 export default function NewArrivals() {
   const config = {
