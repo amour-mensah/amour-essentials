@@ -51,6 +51,10 @@ const StyledNav = styled.nav`
 const StyledLogoContainer = styled.div`
   img {
     width: 18rem;
+
+    @media (max-width: 320px) {
+      width: 15.5rem;
+    }
   }
 
   @media (max-width: 1280px) {
@@ -67,6 +71,10 @@ const StyledLink = styled.a`
 
   &:hover {
     color: ${t.colors.primary};
+  }
+
+  @media (max-width: 320px) {
+    font-size: 1.2rem;
   }
 `;
 

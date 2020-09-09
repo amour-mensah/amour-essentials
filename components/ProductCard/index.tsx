@@ -29,7 +29,7 @@ const StyledProductImage = styled.div`
   }
 
   @media (max-width: 425px) {
-    width: 60%;
+    width: 75%;
     height: 18rem;
   }
 `;
