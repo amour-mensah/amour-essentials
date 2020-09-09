@@ -12,6 +12,10 @@ const StyledReviews = styled.section`
     color: ${t.colors.primary};
     text-transform: uppercase;
     text-align: center;
+
+    @media (max-width: 425px) {
+      font-size: 1.6rem;
+    }
   }
 `;
 

@@ -53,6 +53,7 @@ const StyledImageDiv = styled.div`
 
       @media (max-width: 425px) {
         font-size: 1.4rem;
+        margin-bottom: 1.6rem;
       }
     }
 

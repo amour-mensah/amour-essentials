@@ -15,6 +15,10 @@ const StyledNewArrival = styled.section`
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 3rem;
+
+    @media (max-width: 425px) {
+      font-size: 1.6rem;
+    }
   }
 
   .slick-next {
