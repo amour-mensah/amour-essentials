@@ -5,6 +5,8 @@ import { config, library } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { theme } from '../css/theme';
 import { GlobalStyles } from '../css/base';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
