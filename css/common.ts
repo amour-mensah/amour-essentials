@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme as t } from './theme';
 
 interface IProps {
-  variant?: VARIANT;
+  variant?: string;
 }
 
 export const ActionButton = styled.button<IProps>`

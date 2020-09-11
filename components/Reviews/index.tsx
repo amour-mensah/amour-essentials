@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { theme as t } from '../../css/theme';
 import Star from '../../public/star.svg';
-import RightArrow from '../../public/right-arrow.svg';
 
 const StyledReviews = styled.section`
   width: 100%;
@@ -85,21 +84,6 @@ const StyledStar = styled(Star)`
   }
 `;
 
-// const StyledRightArrow = styled(RightArrow)`
-//   background-color: ${t.colors.grey};
-//   width: 1.8rem;
-//   height: 1.8rem;
-//   border-radius: 50%;
-//   padding: 0.6rem;
-//   margin-left: 2rem;
-//   margin-bottom: 6.25rem;
-//   cursor: pointer;
-
-//   &:hover {
-//     background-color: ${t.colors.primary};
-//   }
-// `;
-
 export default function Reviews() {
   return (
     <StyledReviews>
@@ -122,7 +106,6 @@ export default function Reviews() {
           </p>
           <p>- Alice Johnson from Toronto, ON</p>
         </StyledTextContainer>
-        {/* <StyledRightArrow /> */}
       </StyledReviewContainer>
     </StyledReviews>
   );

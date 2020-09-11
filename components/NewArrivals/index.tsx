@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import { theme as t } from '../../css/theme';
 import ProductCard from '../ProductCard';
-import RightArrow from '../../public/right-arrow.svg';
 
 const StyledNewArrival = styled.section`
   background-color: ${t.colors.primary};
@@ -29,21 +28,6 @@ const StyledNewArrival = styled.section`
     left: 0;
   }
 `;
-
-// const StyledRightArrow = styled(RightArrow)`
-//   background-color: ${t.colors.grey};
-//   width: 1.8rem;
-//   height: 1.8rem;
-//   border-radius: 50%;
-//   padding: 0.6rem;
-//   margin-left: 2rem;
-//   margin-bottom: 6.25rem;
-//   cursor: pointer;
-
-//   &:hover {
-//     background-color: ${t.colors.white};
-//   }
-// `;
 
 export default function NewArrivals() {
   const config = {
@@ -73,7 +57,6 @@ export default function NewArrivals() {
           <ProductCard />
           <ProductCard />
         </Slider>
-        {/* <StyledRightArrow /> */}
       </div>
     </StyledNewArrival>
   );
