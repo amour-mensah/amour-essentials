@@ -37,7 +37,7 @@ const StyledImageDiv = styled.div`
     width: max-content;
 
     @media (max-width: 425px) {
-      width: auto;
+      width: 18.75rem;
     }
 
     h3 {
@@ -52,7 +52,7 @@ const StyledImageDiv = styled.div`
 
       @media (max-width: 425px) {
         font-size: 1.4rem;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1rem;
       }
     }
 
@@ -67,7 +67,7 @@ const StyledImageDiv = styled.div`
 
       @media (max-width: 425px) {
         font-size: 1.2rem;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1rem;
       }
 
       span {

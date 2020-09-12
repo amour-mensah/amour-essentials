@@ -25,7 +25,11 @@ const StyledHeroCTA = styled.div`
 
   @media (max-width: 425px) {
     top: 60%;
-    width: 15.5rem;
+    width: 18rem;
+  }
+
+  @media (max-height: 520px) {
+    top: 70%;
   }
 
   h1 {
@@ -43,6 +47,10 @@ const StyledHeroCTA = styled.div`
       line-height: 1.1;
       margin-bottom: 1.5rem;
     }
+
+    @media (max-height: 520px) {
+      margin-bottom: 1rem;
+    }
   }
 
   p {
@@ -57,6 +65,10 @@ const StyledHeroCTA = styled.div`
 
     @media (max-width: 425px) {
       font-size: 1.4rem;
+    }
+
+    @media (max-height: 520px) {
+      margin-bottom: 2rem;
     }
   }
 `;
