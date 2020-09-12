@@ -3,7 +3,8 @@ import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { GlobalStyles, theme } from '../css';
+import { theme } from '../css';
+import '../css/base.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 config.autoAddCss = false;
@@ -22,7 +23,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel='stylesheet'
         />
       </Head>
-      <GlobalStyles />
       <Component {...pageProps} />
     </ThemeProvider>
   );
