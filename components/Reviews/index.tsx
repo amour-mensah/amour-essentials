@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme as t } from '../../css/theme';
+import { theme as t } from '../../css';
 import Star from '../../public/star.svg';
 
 const StyledReviews = styled.section`

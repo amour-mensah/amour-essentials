@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Slider from 'react-slick';
-import { theme as t } from '../../css/theme';
+import { theme as t } from '../../css';
 import ProductCard from '../ProductCard';
 
 const StyledNewArrival = styled.section`

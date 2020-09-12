@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { theme as t } from '../../css/theme';
-import { ActionButton } from '../../css/common';
+import { theme as t, ActionButton } from '../../css';
 
 const StyledCouchSection = styled.section`
   width: 100%;

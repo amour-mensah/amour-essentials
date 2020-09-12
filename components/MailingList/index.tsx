@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { theme as t } from '../../css/theme';
+import { theme as t } from '../../css';
 
 const StyledMailingList = styled.section`
   width: 100%;

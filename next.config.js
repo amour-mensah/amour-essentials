@@ -1,7 +1,8 @@
 /* eslint-disable no-param-reassign */
-const path = require('path');
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
+  .default;
 
-const workspace = path.join(__dirname, '..');
+const styledComponentsTransformer = createStyledComponentsTransformer();
 module.exports = {
   poweredByHeader: false,
   webpack: (config, options) => {
@@ -10,7 +11,12 @@ module.exports = {
       ...config.module,
       rules: [
         ...config.module.rules,
-        { test: /\.svg$/, use: 'react-svg-loader' }
+        { test: /\.svg$/, use: 'react-svg-loader' },
+        {
+          test: /\.(js|jsx|ts|tsx)$/,
+          exclude: /node_modules/,
+          use: options.defaultLoaders.babel
+        }
       ]
     };
     return config;

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { theme as t } from '../../css/theme';
+import { theme as t } from '../../css';
 
 const StyledFooter = styled.footer`
   width: 100%;

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { theme as t } from '../css/theme';
+import { theme as t } from '../css';
 import Nav from '../components/Nav';
 import Hero from '../components/Hero';
 import Feature from '../components/Feature';

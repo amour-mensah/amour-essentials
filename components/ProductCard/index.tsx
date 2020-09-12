@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme as t } from '../../css/theme';
+import { theme as t } from '../../css';
 
 const StyledProductCard = styled.div`
   padding: 1rem;
