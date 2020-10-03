@@ -7,19 +7,26 @@ import Success from './steps/Success';
 
 export default function SurveyForm() {
   const [step, setStep] = useState(1);
-  const [orderId, setOrderId] = useState(null);
+  const [orderId, setOrderId] = useState('');
+
+  // Authenticate order ID
+  const AuthenticateOrderId = () => {
+    // Validate orderId
+    // Handle real authentication in here
+    setStep(step + 1);
+  };
 
   switch (step) {
     case 1:
-      return <OrderId orderId={orderId} setOrderId={setOrderId} />
+      return <OrderId orderId={orderId} setOrderId={setOrderId} />;
     case 2:
-      return <Experience />
+      return <Experience />;
     case 3:
-      return <ShareFeedback />
+      return <ShareFeedback />;
     case 4:
-      return <ConfirmAddress />
+      return <ConfirmAddress />;
     case 5:
-      return <Success />
+      return <Success />;
     default:
       return null;
   }

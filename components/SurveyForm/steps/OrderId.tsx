@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import { theme as t } from '../../../css/theme';
 import { ActionButton } from '../../../css';
 
+interface OrderIdProps {
+  orderId: String;
+  setOrderId: any;
+}
+
 const StyledOrderId = styled.div`
   width: 65%;
   position: absolute;
@@ -38,12 +43,18 @@ const StyledOrderId = styled.div`
   }
 `;
 
-export default function OrderId() {
+export default function OrderId({ orderId, setOrderId }: OrderIdProps) {
   return (
     <StyledOrderId>
       <h2>Enter Order ID Below</h2>
       <form>
-        <input type='text' name='orderId' id='orderId' />
+        <input
+          type='text'
+          name='orderId'
+          id='orderId'
+          value={orderId}
+          onChange={e => setOrderId(e.target.value)}
+        />
         <ActionButton variant='secondary'>Authenticate</ActionButton>
       </form>
     </StyledOrderId>
