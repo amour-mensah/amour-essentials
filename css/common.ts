@@ -78,7 +78,7 @@ export const surveyWrapper = css`
     font-size: 1.2rem;
     text-transform: uppercase;
     margin-bottom: 4rem;
-    font-family: ${t.fonts.secondary};
+    /* font-family: ${t.fonts.secondary}; */
   }
 `;
 
