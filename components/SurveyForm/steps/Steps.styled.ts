@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 import { theme as t } from '../../../css/theme';
+import { surveyWrapper, styledRadio } from '../../../css/common';
 
 // Order Id step
 export const StyledOrderId = styled.div`
-  width: 65%;
-  text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  border-radius: 1rem;
-  padding: 2.5rem;
+  ${surveyWrapper};
 
   h2 {
     font-size: 2rem;
@@ -35,66 +32,16 @@ export const StyledOrderId = styled.div`
 
 // Product Experience step
 export const StyledExperience = styled.div`
-  width: 65%;
-  margin: 2rem 0;
-  text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  border-radius: 1rem;
-  padding: 2.5rem;
-
-  h2 {
-    font-size: 2rem;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    margin-bottom: 4rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    margin-bottom: 4rem;
-    font-family: ${t.fonts.secondary};
-  }
+  ${surveyWrapper};
 `;
 
 // Satisfaction in Product Experience
 export const StyledSatisfaction = styled.div`
   margin-bottom: 5rem;
-
-  input {
-    display: none;
-  }
+  ${styledRadio};
 
   label {
-    display: inline-block;
-    padding: 1rem 2rem;
     width: 11rem;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    background-color: ${t.colors.primary};
-    color: ${t.colors.white};
-    transition: all ease-in-out 0.2s;
-
-    &:not(:last-of-type) {
-      margin-right: 1rem;
-    }
-
-    &:hover {
-      background-color: ${t.colors.grey};
-      color: ${t.colors.white};
-    }
-  }
-
-  input[type='radio']:checked + label {
-    background-color: ${t.colors.grey};
-    color: ${t.colors.white};
   }
 `;
 
@@ -131,36 +78,7 @@ export const StyledExperienceDescription = styled.div`
 
 // Rating in Product Experience
 export const StyledRating = styled.div`
-  input {
-    display: none;
-  }
-
-  label {
-    display: inline-block;
-    padding: 1rem 2rem;
-    /* width: 11rem; */
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    background-color: ${t.colors.primary};
-    color: ${t.colors.white};
-    transition: all ease-in-out 0.2s;
-
-    &:not(:last-of-type) {
-      margin-right: 1rem;
-    }
-
-    &:hover {
-      background-color: ${t.colors.grey};
-      color: ${t.colors.white};
-    }
-  }
-
-  input[type='radio']:checked + label {
-    background-color: ${t.colors.grey};
-    color: ${t.colors.white};
-  }
+  ${styledRadio}
 `;
 
 // Buttons for submission
@@ -178,4 +96,9 @@ export const ButtonWrapper = styled.div`
       color: ${t.colors.primary};
     }
   }
+`;
+
+// Share Feedback step
+export const StyledShareFeedback = styled.div`
+  ${surveyWrapper};
 `;
