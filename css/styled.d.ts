@@ -7,6 +7,7 @@ interface IColors {
   black: string;
   grey: string;
   lightGrey: string;
+  amazonOrange: string;
 }
 
 interface IFonts {

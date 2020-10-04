@@ -7,7 +7,8 @@ export const theme: DefaultTheme = {
     white: '#ffffff',
     black: '#000000',
     grey: '#aba299',
-    lightGrey: '#dcdcdc'
+    lightGrey: '#dcdcdc',
+    amazonOrange: '#FF9900'
   },
   fonts: {
     primary: `'Gotham Book', sans-serif`,

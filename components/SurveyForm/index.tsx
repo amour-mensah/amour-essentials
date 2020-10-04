@@ -9,6 +9,7 @@ export default function SurveyForm() {
   const [step, setStep] = useState(1);
   const [orderId, setOrderId] = useState('');
   const [experience, setExperience] = useState({});
+  const [feedback, setFeedback] = useState('');
 
   const nextStep = () => {
     setStep(step + 1);
@@ -37,7 +38,14 @@ export default function SurveyForm() {
         />
       );
     case 3:
-      return <ShareFeedback />;
+      return (
+        <ShareFeedback
+          feedback={feedback}
+          setFeedback={setFeedback}
+          nextStep={nextStep}
+          prevStep={prevStep}
+        />
+      );
     case 4:
       return <ConfirmAddress />;
     case 5:
