@@ -1,7 +1,34 @@
 import React from 'react';
-import { StyledShareFeedback } from './Steps.styled';
+import { ActionButton } from '../../../css';
+import {
+  StyledShareFeedback,
+  FeedbackContainer,
+  ButtonWrapper
+} from './Steps.styled';
 
-export default function ShareFeedback() {
+interface ShareFeedbackProps {
+  feedback: string;
+  setFeedback: any;
+  nextStep: any;
+  prevStep: any;
+}
+
+export default function ShareFeedback({
+  feedback,
+  setFeedback,
+  nextStep,
+  prevStep
+}) {
+  const handleChange = e => {
+    setFeedback(e.target.value);
+  };
+
+  const submitFeedback = e => {
+    e.preventDefault();
+    // Handle feedback submission
+    nextStep();
+  };
+
   return (
     <StyledShareFeedback>
       <h3>Thanks for your Feedback!</h3>
@@ -14,6 +41,28 @@ export default function ShareFeedback() {
         FURTHERMORE, FEEDBACK LIKE YOURS HELPS SMALL BRANDS CONTINUE TO GROW
         ONLINE AND IS VERY MUCH APPRECIATED.
       </p>
+      <form onSubmit={submitFeedback}>
+        <FeedbackContainer>
+          <textarea
+            name='feedback'
+            id='feedback'
+            value={feedback}
+            onChange={handleChange}
+          />
+          <a href='#'>
+            <div>
+              <span>Share Feedback on Amazon</span>
+              <img src='/amazon-logo-transparent.png' alt='Amazon Logo' />
+            </div>
+          </a>
+        </FeedbackContainer>
+        <ButtonWrapper>
+          <span onClick={prevStep}>&larr; Prev Step</span>
+          <ActionButton variant='white' style={{ marginTop: '100px' }}>
+            CONTINUE TO CLAIM DISCOUNT PROMOTION
+          </ActionButton>
+        </ButtonWrapper>
+      </form>
     </StyledShareFeedback>
   );
 }
