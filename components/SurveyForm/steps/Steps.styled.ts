@@ -62,6 +62,7 @@ export const StyledExperience = styled.div`
   }
 `;
 
+// Satisfaction in Product Experience
 export const StyledSatisfaction = styled.div`
   margin-bottom: 5rem;
 
@@ -97,6 +98,7 @@ export const StyledSatisfaction = styled.div`
   }
 `;
 
+// Description in Product Experience
 export const StyledExperienceDescription = styled.div`
   margin-bottom: 5rem;
 
@@ -127,6 +129,7 @@ export const StyledExperienceDescription = styled.div`
   }
 `;
 
+// Rating in Product Experience
 export const StyledRating = styled.div`
   input {
     display: none;
@@ -160,6 +163,7 @@ export const StyledRating = styled.div`
   }
 `;
 
+// Buttons for submission
 export const ButtonWrapper = styled.div`
   position: relative;
 
