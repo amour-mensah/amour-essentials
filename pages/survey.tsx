@@ -5,9 +5,11 @@ import Footer from '../components/Footer';
 import SurveyForm from '../components/SurveyForm';
 
 const StyledSurveyForm = styled.div`
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 34.5rem;
+  min-height: calc(100vh - 21rem);
 `;
 
 export default function Survey() {

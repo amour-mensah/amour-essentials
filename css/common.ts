@@ -14,6 +14,17 @@ export const ActionButton = styled.button<IProps>`
   cursor: pointer;
   ${props => {
     switch (props.variant) {
+      case 'white':
+        return `
+          background-color: ${t.colors.white};
+          color: ${t.colors.black};
+          border: 1px solid ${t.colors.black};
+
+          &:hover {
+            background-color: ${t.colors.black};
+            color: ${t.colors.white};
+          }
+        `;
       case 'secondary':
         return `
           background-color: ${t.colors.primary};
