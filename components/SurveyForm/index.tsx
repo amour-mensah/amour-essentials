@@ -6,7 +6,7 @@ import ConfirmAddress from './steps/ConfirmAddress';
 import Success from './steps/Success';
 
 export default function SurveyForm() {
-  const [step, setStep] = useState(5);
+  const [step, setStep] = useState(1);
   const [orderId, setOrderId] = useState('');
   const [experience, setExperience] = useState({});
   const [feedback, setFeedback] = useState('');
