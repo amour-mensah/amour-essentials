@@ -180,6 +180,7 @@ export const StyledConfirmAddress = styled.div`
   }
 `;
 
+// Form field
 export const StyledFormField = styled.div`
   width: 80%;
   margin: 0.8rem auto;
@@ -203,5 +204,14 @@ export const StyledFormField = styled.div`
       outline: none;
       border: 1px solid ${t.colors.primary};
     }
+  }
+`;
+
+// Success step
+export const StyledSuccess = styled.div`
+  ${surveyWrapper}
+
+  p {
+    line-height: 2;
   }
 `;
