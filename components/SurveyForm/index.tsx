@@ -10,6 +10,7 @@ export default function SurveyForm() {
   const [orderId, setOrderId] = useState('');
   const [experience, setExperience] = useState({});
   const [feedback, setFeedback] = useState('');
+  const [address, setAddress] = useState({});
 
   const nextStep = () => {
     setStep(step + 1);
@@ -17,6 +18,11 @@ export default function SurveyForm() {
 
   const prevStep = () => {
     setStep(step - 1);
+  };
+
+  const finalSubmission = () => {
+    // Do final submission here
+    alert(JSON.stringify({ orderId, ...experience, feedback, ...address }));
   };
 
   switch (step) {
@@ -47,7 +53,15 @@ export default function SurveyForm() {
         />
       );
     case 4:
-      return <ConfirmAddress />;
+      return (
+        <ConfirmAddress
+          address={address}
+          setAddress={setAddress}
+          nextStep={nextStep}
+          prevStep={prevStep}
+          finalSubmission={finalSubmission}
+        />
+      );
     case 5:
       return <Success />;
     default:
