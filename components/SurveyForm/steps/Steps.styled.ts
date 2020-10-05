@@ -112,6 +112,7 @@ export const StyledShareFeedback = styled.div`
   }
 `;
 
+// Feedback container feedback step
 export const FeedbackContainer = styled.div`
   width: 70%;
   margin: 0 auto;
@@ -167,5 +168,40 @@ export const FeedbackContainer = styled.div`
   img {
     width: 70%;
     margin-top: 1.5rem;
+  }
+`;
+
+// Confirm Address step
+export const StyledConfirmAddress = styled.div`
+  ${surveyWrapper};
+
+  form {
+    width: 100%;
+  }
+`;
+
+export const StyledFormField = styled.div`
+  width: 80%;
+  margin: 0.8rem auto;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 120px 1fr;
+  grid-column-gap: 2.5rem;
+
+  label {
+    text-align: right;
+  }
+
+  input {
+    border: none;
+    border: 1px solid transparent;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 0.8em;
+    padding: 1rem;
+
+    &:focus {
+      outline: none;
+      border: 1px solid ${t.colors.primary};
+    }
   }
 `;
