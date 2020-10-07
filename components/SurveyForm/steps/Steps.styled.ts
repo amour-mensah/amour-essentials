@@ -48,10 +48,34 @@ export const StyledExperience = styled.div`
 // Satisfaction in Product Experience
 export const StyledSatisfaction = styled.div`
   margin-bottom: 5rem;
+
   ${styledRadio};
 
   label {
     width: 11rem;
+    padding: 1rem 2rem;
+
+    @media (max-width: 1440px) {
+      padding: 1rem 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        margin-top: 0.5rem;
+      }
+    }
+
+    @media (max-width: 425px) {
+      margin-top: 0.5rem;
+      padding: 0.8rem 0.8rem;
+    }
+
+    @media (max-width: 425px) {
+      &:not(:last-of-type) {
+        margin-right: 0;
+      }
+    }
   }
 `;
 
@@ -79,6 +103,10 @@ export const StyledExperienceDescription = styled.div`
     border-radius: 1rem;
     transition: border ease-in-out 0.2s;
 
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+
     &:focus {
       outline: none;
       border: 1px solid ${t.colors.primary};
@@ -89,6 +117,22 @@ export const StyledExperienceDescription = styled.div`
 // Rating in Product Experience
 export const StyledRating = styled.div`
   ${styledRadio}
+
+  label {
+    @media (max-width: 1024px) {
+      width: 3rem;
+      padding: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      width: 2rem;
+      padding: 0.8rem 0.5rem;
+
+      &:not(:last-of-type) {
+        margin-right: 0.1rem;
+      }
+    }
+  }
 `;
 
 // Buttons for submission
@@ -101,6 +145,12 @@ export const ButtonWrapper = styled.div`
     left: 0;
     color: ${t.colors.black};
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      display: block;
+      position: static;
+      margin-top: 45px;
+    }
 
     &:hover {
       color: ${t.colors.primary};
