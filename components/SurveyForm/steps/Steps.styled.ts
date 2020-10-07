@@ -169,6 +169,10 @@ export const StyledShareFeedback = styled.div`
 
   form {
     margin-top: 6rem;
+
+    @media (max-width: 425px) {
+      margin-top: 2rem;
+    }
   }
 `;
 
@@ -182,6 +186,21 @@ export const FeedbackContainer = styled.div`
   justify-items: center;
   align-items: center;
 
+  @media (max-width: 1024px) {
+    width: 90%;
+    grid-column-gap: 4rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    grid-column-gap: 2rem;
+  }
+
+  @media (max-width: 425px) {
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
+  }
+
   textarea {
     display: block;
     width: 100%;
@@ -193,6 +212,10 @@ export const FeedbackContainer = styled.div`
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border: 1px solid transparent;
     transition: border ease-in-out 0.2s;
+
+    @media (max-width: 425px) {
+      margin-bottom: 2rem;
+    }
 
     &:focus {
       outline: none;
