@@ -18,7 +18,7 @@ const StyledFeature = styled.section`
   }
 `;
 
-const StyledTextContainer = styled.div`
+const StyledTextContainer = styled.div<IOrder>`
   color: ${t.colors.primary};
   ${props => {
     if (props.order === 2) {
@@ -67,7 +67,7 @@ const StyledTextContainer = styled.div`
   }
 `;
 
-const StyledImageContainer = styled.div`
+const StyledImageContainer = styled.div<IOrder>`
   width: 80%;
   overflow: hidden;
   ${props => {

@@ -5,7 +5,6 @@ import {
   StyledSatisfaction,
   StyledExperienceDescription,
   StyledRating,
-  StyledRatingButton,
   ButtonWrapper
 } from './Steps.styled';
 
