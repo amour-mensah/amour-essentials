@@ -64,12 +64,17 @@ export const surveyWrapper = css`
 
   @media (max-width: 425px) {
     width: 90%;
+    padding: 1.5rem;
   }
 
   h2 {
     font-size: 2rem;
     text-transform: uppercase;
     margin-bottom: 2rem;
+
+    @media (max-width: 1024px) {
+      font-size: 1.8rem;
+    }
 
     @media (max-width: 425px) {
       font-size: 1.6rem;
@@ -80,13 +85,24 @@ export const surveyWrapper = css`
     font-size: 1.5rem;
     text-transform: uppercase;
     margin-bottom: 4rem;
+
+    @media (max-width: 1024px) {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 1rem;
+    }
   }
 
   p {
     font-size: 1.2rem;
     text-transform: uppercase;
     margin-bottom: 4rem;
-    /* font-family: ${t.fonts.secondary}; */
+
+    @media (max-width: 1024px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -97,7 +113,6 @@ export const styledRadio = css`
 
   label {
     display: inline-block;
-    padding: 1rem 2rem;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -107,7 +122,7 @@ export const styledRadio = css`
     transition: all ease-in-out 0.2s;
 
     &:not(:last-of-type) {
-      margin-right: 1rem;
+      margin-right: 0.5rem;
     }
 
     &:hover {
