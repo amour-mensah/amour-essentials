@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useState } from 'react';
+import React from 'react';
 import OrderId from './steps/OrderId';
 import Experience from './steps/Experience';
 import ShareFeedback from './steps/ShareFeedback';
@@ -7,11 +6,11 @@ import ConfirmAddress from './steps/ConfirmAddress';
 import Success from './steps/Success';
 
 export default function SurveyForm() {
-  const [step, setStep] = useState(1);
-  const [orderId, setOrderId] = useState('');
-  const [experience, setExperience] = useState({});
-  const [feedback, setFeedback] = useState('');
-  const [address, setAddress] = useState({});
+  const [step, setStep] = React.useState(1);
+  const [orderId, setOrderId] = React.useState('');
+  const [experience, setExperience] = React.useState({});
+  const [feedback, setFeedback] = React.useState('');
+  const [address, setAddress] = React.useState({});
 
   const nextStep = () => {
     setStep(step + 1);
