@@ -9,6 +9,7 @@ const StyledSurveyForm = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin: 1rem 0;
   min-height: calc(100vh - 21rem);
 `;
 
