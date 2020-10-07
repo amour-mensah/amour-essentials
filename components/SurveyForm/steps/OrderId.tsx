@@ -3,7 +3,7 @@ import { ActionButton } from '../../../css';
 import { StyledOrderId } from './Steps.styled';
 
 interface OrderIdProps {
-  orderId: String;
+  orderId: string;
   setOrderId: any;
   nextStep: any;
 }

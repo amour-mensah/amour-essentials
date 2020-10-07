@@ -18,7 +18,7 @@ interface FormFieldProps {
   name: string;
   value: string;
   handleChange: any;
-  required: boolean;
+  required?: boolean;
   type?: string;
 }
 
