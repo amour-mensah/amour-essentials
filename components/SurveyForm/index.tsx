@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import OrderId from './steps/OrderId';
 import Experience from './steps/Experience';
 import ShareFeedback from './steps/ShareFeedback';
