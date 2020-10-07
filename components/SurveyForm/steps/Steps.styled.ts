@@ -6,9 +6,11 @@ import { surveyWrapper, styledRadio } from '../../../css/common';
 export const StyledOrderId = styled.div`
   ${surveyWrapper};
 
+  form {
+    width: 100%;
+  }
+
   h2 {
-    font-size: 2rem;
-    text-transform: uppercase;
     margin-bottom: 6rem;
   }
 
@@ -19,9 +21,17 @@ export const StyledOrderId = styled.div`
     margin-right: 1rem;
     border: none;
     border-bottom: 1px solid #000000;
-    width: 40rem;
+    width: 60%;
     font-size: 1.2rem;
     transition: border ease-in-out 0.2s;
+
+    @media (max-width: 1024px) {
+      margin: 0 auto 2rem auto;
+    }
+
+    @media (max-width: 425px) {
+      text-indent: 0;
+    }
 
     &:focus {
       outline: none;

@@ -62,10 +62,18 @@ export const surveyWrapper = css`
   border-radius: 1rem;
   padding: 2.5rem;
 
+  @media (max-width: 425px) {
+    width: 90%;
+  }
+
   h2 {
     font-size: 2rem;
     text-transform: uppercase;
     margin-bottom: 2rem;
+
+    @media (max-width: 425px) {
+      font-size: 1.6rem;
+    }
   }
 
   h3 {
