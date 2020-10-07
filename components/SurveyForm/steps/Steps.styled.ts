@@ -272,8 +272,24 @@ export const StyledFormField = styled.div`
   grid-template-columns: 120px 1fr;
   grid-column-gap: 2.5rem;
 
+  @media (max-width: 1024px) {
+    width: 90%;
+    grid-column-gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: block;
+  }
+
   label {
     text-align: right;
+
+    @media (max-width: 768px) {
+      text-align: center;
+      display: block;
+      margin-bottom: 1.2rem;
+    }
   }
 
   input {
@@ -282,6 +298,12 @@ export const StyledFormField = styled.div`
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border-radius: 0.8em;
     padding: 1rem;
+
+    @media (max-width: 768px) {
+      display: block;
+      width: 90%;
+      margin: 0 auto 2.5rem auto;
+    }
 
     &:focus {
       outline: none;
