@@ -17,7 +17,7 @@ export default function Home() {
       </header>
       <Hero />
       <Feature />
-      <Feature order={2} />
+      <Feature order={2} feature={2} />
       <BigCouch />
       <NewArrivals />
       <Reviews />

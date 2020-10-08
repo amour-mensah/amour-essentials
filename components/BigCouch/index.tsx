@@ -34,17 +34,18 @@ const StyledImageDiv = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     color: ${t.colors.white};
-    width: max-content;
+    width: 80%;
 
     @media (max-width: 425px) {
-      width: 18.75rem;
+      width: 90%;
     }
 
     h3 {
       font-size: 2.5rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 2rem;
+      text-transform: capitalize;
+      /* letter-spacing: 1.5px; */
+      margin-bottom: 3rem;
+      line-height: 1.2;
 
       @media (max-width: 1024px) {
         font-size: 1.6rem;
@@ -82,12 +83,11 @@ export default function BigCouch() {
     <StyledCouchSection>
       <StyledImageDiv>
         <div>
-          <h3>Header Title Gotham Book 60pt</h3>
-          <p>
-            Description text Garamond Premier Pro Regular or <span>Italic</span>{' '}
-            45pt
-          </p>
-          <ActionButton>Action Button</ActionButton>
+          <h3>
+            Get Everything You Need t Amour Essentials to Add That Perfect Touch
+            to Any Room of Your Home
+          </h3>
+          <ActionButton>Learn More</ActionButton>
         </div>
       </StyledImageDiv>
     </StyledCouchSection>
