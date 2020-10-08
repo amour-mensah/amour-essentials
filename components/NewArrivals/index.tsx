@@ -47,13 +47,18 @@ export default function NewArrivals() {
     ]
   };
 
+  const product = {
+    name: 'Four-Piece Canister Set',
+    image: '/jie-_3UQCpydD-o-unsplash.jpg'
+  };
+
   return (
     <StyledNewArrival>
       <h3>New Arrivals</h3>
       <div>
         <Slider {...config}>
           <ProductCard />
-          <ProductCard />
+          <ProductCard product={product} />
           <ProductCard />
           <ProductCard />
         </Slider>

@@ -20,12 +20,12 @@ const StyledHeroCTA = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: max-content;
+  width: 80%;
   color: ${t.colors.white};
 
   @media (max-width: 425px) {
     top: 60%;
-    width: 18rem;
+    width: 90%;
   }
 
   @media (max-height: 520px) {
@@ -34,9 +34,10 @@ const StyledHeroCTA = styled.div`
 
   h1 {
     font-size: 3rem;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 1.5px;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    line-height: 1.2;
 
     @media (max-width: 1024px) {
       font-size: 2rem;
@@ -81,12 +82,12 @@ export default function Hero() {
   return (
     <StyledHero>
       <StyledHeroCTA>
-        <h1>Header Title Gotham Book 70pt</h1>
-        <p>
-          Description Text Garamond Premier Pro Regular or{' '}
-          <Italicized>Italic</Italicized> 45pt
-        </p>
-        <ActionButton>Action Button</ActionButton>
+        <h1>
+          Inspiring you with unique high quality & Premium Household Products
+          Curated for Your Needs
+        </h1>
+        <p>Check Out New Arrivals</p>
+        <ActionButton>Learn More</ActionButton>
       </StyledHeroCTA>
     </StyledHero>
   );
