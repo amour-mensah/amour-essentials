@@ -28,7 +28,7 @@ const StyledProductImage = styled.div<ProductImageProps>`
       return `
         background-image: url(${props.image});
         background-position: center center;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
       `;
     } else {
