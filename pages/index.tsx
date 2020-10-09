@@ -14,13 +14,15 @@ interface HomeProps {
   feature1: any;
   feature2: any;
   bigCouchContent: any;
+  newArrivals: any;
 }
 
 export default function Home({
   heroContent,
   feature1,
   feature2,
-  bigCouchContent
+  bigCouchContent,
+  newArrivals
 }: HomeProps) {
   return (
     <>
@@ -31,7 +33,7 @@ export default function Home({
       <Feature featureContent={feature1} />
       <Feature featureContent={feature2} order={2} />
       <BigCouch bigCouchContent={bigCouchContent} />
-      <NewArrivals />
+      <NewArrivals newArrivals={newArrivals} />
       <Reviews />
       <MailingList />
       <Footer />
@@ -40,20 +42,29 @@ export default function Home({
 }
 
 export async function getStaticProps() {
+  // fetching hero content
   const heroContent = await fetch('http://localhost:1337/hero').then(res =>
     res.json()
   );
 
+  // fetching feature 1 content
   const feature1Content = await fetch(
     'http://localhost:1337/feature-1'
   ).then(res => res.json());
 
+  // fetching feature 2 content
   const feature2Content = await fetch(
     'http://localhost:1337/feature-2'
   ).then(res => res.json());
 
+  // fetching big couch content
   const bigCouchContent = await fetch(
     'http://localhost:1337/big-couch'
+  ).then(res => res.json());
+
+  // fetching new arrivals
+  const newArrivals = await fetch(
+    'http://localhost:1337/products?new_arrival=true'
   ).then(res => res.json());
 
   return {
@@ -61,7 +72,8 @@ export async function getStaticProps() {
       heroContent,
       feature1: feature1Content,
       feature2: feature2Content,
-      bigCouchContent
+      bigCouchContent,
+      newArrivals
     }
   };
 }
