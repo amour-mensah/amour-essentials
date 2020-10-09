@@ -23,7 +23,7 @@ const StyledCouchSection = styled.section`
 const StyledImageDiv = styled.div<ImageProps>`
   ${props => {
     return `
-      background-image: url("${process.env.API_URL}${props.image}");
+      background-image: url("${process.env.API_URL}${props.image}?token=${process.env.TOKEN}");
     `;
   }}
   background-position: center center;
