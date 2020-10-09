@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme as t, ActionButton } from '../../css';
 
 interface HeroProps {
-  heroData: any;
+  heroContent: any;
 }
 
 interface HeroImage {
@@ -90,12 +90,12 @@ const Italicized = styled.span`
   font-style: italic;
 `;
 
-export default function Hero({ heroData }: HeroProps) {
+export default function Hero({ heroContent }: HeroProps) {
   const {
     heading,
     small_text,
     background_image: { url }
-  } = heroData;
+  } = heroContent;
 
   return (
     <StyledHero image={url}>
