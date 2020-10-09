@@ -91,12 +91,19 @@ const StyledImageDiv = styled.div<ImageProps>`
 `;
 
 export default function BigCouch({ bigCouchContent }: BigCouchProps) {
+  // destructuring needed data from big couch content
+  const {
+    heading,
+    small_text,
+    background_image: { url }
+  } = bigCouchContent;
+
   return (
     <StyledCouchSection>
-      <StyledImageDiv image={bigCouchContent.background_image.url}>
+      <StyledImageDiv image={url}>
         <div>
-          <h3>{bigCouchContent.heading}</h3>
-          {bigCouchContent.small_text && <p>{bigCouchContent.small_text}</p>}
+          <h3>{heading}</h3>
+          {small_text && <p>{small_text}</p>}
           <ActionButton>Learn More</ActionButton>
         </div>
       </StyledImageDiv>
