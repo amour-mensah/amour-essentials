@@ -12,7 +12,7 @@ interface HeroImage {
 const StyledHero = styled.section<HeroImage>`
   ${props => {
     return `
-      background-image: url("http://localhost:1337${props.image}")
+      background-image: url("http://localhost:1337${props.image}");
     `;
   }};
   background-repeat: no-repeat;
