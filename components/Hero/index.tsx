@@ -1,8 +1,20 @@
 import styled from 'styled-components';
 import { theme as t, ActionButton } from '../../css';
 
-const StyledHero = styled.section`
-  background: url('/pexels-photo-54283.png');
+interface HeroProps {
+  heroData: any;
+}
+
+interface HeroImage {
+  image: string;
+}
+
+const StyledHero = styled.section<HeroImage>`
+  ${props => {
+    return `
+      background-image: url("http://localhost:1337${props.image}")
+    `;
+  }};
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100%;
@@ -78,15 +90,18 @@ const Italicized = styled.span`
   font-style: italic;
 `;
 
-export default function Hero() {
+export default function Hero({ heroData }: HeroProps) {
+  const {
+    heading,
+    small_text,
+    background_image: { url }
+  } = heroData;
+
   return (
-    <StyledHero>
+    <StyledHero image={url}>
       <StyledHeroCTA>
-        <h1>
-          Inspiring you with unique high quality & Premium Household Products
-          Curated for Your Needs
-        </h1>
-        <p>Check Out New Arrivals</p>
+        <h1>{heading}</h1>
+        <p>{small_text}</p>
         <ActionButton>Learn More</ActionButton>
       </StyledHeroCTA>
     </StyledHero>
