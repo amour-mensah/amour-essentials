@@ -111,9 +111,11 @@ export default function Feature({ order, featureContent }: IOrder) {
     <StyledFeature>
       <StyledTextContainer order={order}>
         <h2>{heading}</h2>
-        <p>
-          <span>{small_text}</span>
-        </p>
+        {small_text && (
+          <p>
+            <span>{small_text}</span>
+          </p>
+        )}
         <ActionButton variant='secondary'>Coming Soon</ActionButton>
       </StyledTextContainer>
       <StyledImageContainer order={order}>
