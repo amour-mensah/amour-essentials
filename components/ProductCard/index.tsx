@@ -26,7 +26,7 @@ const StyledProductImage = styled.div<ProductImageProps>`
   ${props => {
     if (props.image) {
       return `
-        background-image: url(${props.image});
+        background-image: url("http://localhost:1337${props.image}");
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -54,13 +54,8 @@ const StyledProductImage = styled.div<ProductImageProps>`
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <StyledProductCard>
-      {product && product.image ? (
-        <StyledProductImage image={product.image} />
-      ) : (
-        <StyledProductImage />
-      )}
-      <p>{product && product.name ? product.name : 'Coming Soon'}</p>
-      {/* <p>C$999</p> */}
+      <StyledProductImage image={product.images[0].formats.small.url} />
+      <p>{product.name}</p>
     </StyledProductCard>
   );
 }

@@ -3,6 +3,10 @@ import Slider from 'react-slick';
 import { theme as t } from '../../css';
 import ProductCard from '../ProductCard';
 
+interface NewArrivalsProps {
+  newArrivals: any;
+}
+
 const StyledNewArrival = styled.section`
   background-color: ${t.colors.primary};
   padding: 3rem 1rem;
@@ -29,7 +33,7 @@ const StyledNewArrival = styled.section`
   }
 `;
 
-export default function NewArrivals() {
+export default function NewArrivals({ newArrivals }) {
   const config = {
     dots: true,
     infinite: true,
@@ -47,20 +51,14 @@ export default function NewArrivals() {
     ]
   };
 
-  const product = {
-    name: 'Four-Piece Canister Set',
-    image: '/jie-_3UQCpydD-o-unsplash.jpg'
-  };
-
   return (
     <StyledNewArrival>
       <h3>New Arrivals</h3>
       <div>
         <Slider {...config}>
-          <ProductCard />
-          <ProductCard product={product} />
-          <ProductCard />
-          <ProductCard />
+          {newArrivals.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </Slider>
       </div>
     </StyledNewArrival>
