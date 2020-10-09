@@ -26,7 +26,7 @@ const StyledProductImage = styled.div<ProductImageProps>`
   ${props => {
     if (props.image) {
       return `
-        background-image: url("http://localhost:1337${props.image}");
+        background-image: url("${process.env.API_URL}${props.image}");
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
