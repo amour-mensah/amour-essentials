@@ -9,13 +9,17 @@ import Reviews from '../components/Reviews';
 import MailingList from '../components/MailingList';
 import Footer from '../components/Footer';
 
-export default function Home() {
+interface HomeProps {
+  heroData: any;
+}
+
+export default function Home({ heroData }: HomeProps) {
   return (
     <>
       <header style={{ position: 'absolute', top: 0, width: '100%' }}>
         <Nav />
       </header>
-      <Hero />
+      <Hero heroData={heroData} />
       <Feature />
       <Feature order={2} feature={2} />
       <BigCouch />
@@ -25,4 +29,16 @@ export default function Home() {
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const heroData = await fetch('http://localhost:1337/hero').then(res =>
+    res.json()
+  );
+
+  return {
+    props: {
+      heroData
+    }
+  };
 }
