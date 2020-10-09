@@ -102,7 +102,7 @@ export default function Hero({ heroContent }: HeroProps) {
     <StyledHero image={url}>
       <StyledHeroCTA>
         <h1>{heading}</h1>
-        <p>{small_text}</p>
+        {small_text && <p>{small_text}</p>}
         <ActionButton>Learn More</ActionButton>
       </StyledHeroCTA>
     </StyledHero>
