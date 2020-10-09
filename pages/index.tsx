@@ -13,9 +13,15 @@ interface HomeProps {
   heroContent: any;
   feature1: any;
   feature2: any;
+  bigCouchContent: any;
 }
 
-export default function Home({ heroContent, feature1, feature2 }: HomeProps) {
+export default function Home({
+  heroContent,
+  feature1,
+  feature2,
+  bigCouchContent
+}: HomeProps) {
   return (
     <>
       <header style={{ position: 'absolute', top: 0, width: '100%' }}>
@@ -24,7 +30,7 @@ export default function Home({ heroContent, feature1, feature2 }: HomeProps) {
       <Hero heroContent={heroContent} />
       <Feature featureContent={feature1} />
       <Feature featureContent={feature2} order={2} />
-      <BigCouch />
+      <BigCouch bigCouchContent={bigCouchContent} />
       <NewArrivals />
       <Reviews />
       <MailingList />
@@ -46,11 +52,18 @@ export async function getStaticProps() {
     'http://localhost:1337/feature-2'
   ).then(res => res.json());
 
+  const bigCouchContent = await fetch(
+    'http://localhost:1337/big-couch'
+  ).then(res => res.json());
+
+  console.log(bigCouchContent);
+
   return {
     props: {
       heroContent,
       feature1: feature1Content,
-      feature2: feature2Content
+      feature2: feature2Content,
+      bigCouchContent
     }
   };
 }

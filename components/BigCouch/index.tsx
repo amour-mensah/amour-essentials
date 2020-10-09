@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 import { theme as t, ActionButton } from '../../css';
 
+interface BigCouchProps {
+  bigCouchContent: any;
+}
+
+interface ImageProps {
+  image: string;
+}
+
 const StyledCouchSection = styled.section`
   width: 100%;
   height: 70vh;
@@ -12,8 +20,12 @@ const StyledCouchSection = styled.section`
   }
 `;
 
-const StyledImageDiv = styled.div`
-  background: url('/pexels-pixabay-276534.jpg');
+const StyledImageDiv = styled.div<ImageProps>`
+  ${props => {
+    return `
+      background-image: url("http://localhost:1337${props.image}");
+    `;
+  }}
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -78,15 +90,13 @@ const StyledImageDiv = styled.div`
   }
 `;
 
-export default function BigCouch() {
+export default function BigCouch({ bigCouchContent }: BigCouchProps) {
   return (
     <StyledCouchSection>
-      <StyledImageDiv>
+      <StyledImageDiv image={bigCouchContent.background_image.url}>
         <div>
-          <h3>
-            Get Everything You Need t Amour Essentials to Add That Perfect Touch
-            to Any Room of Your Home
-          </h3>
+          <h3>{bigCouchContent.heading}</h3>
+          {bigCouchContent.small_text && <p>{bigCouchContent.small_text}</p>}
           <ActionButton>Learn More</ActionButton>
         </div>
       </StyledImageDiv>
