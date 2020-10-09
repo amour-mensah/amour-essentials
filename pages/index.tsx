@@ -56,8 +56,6 @@ export async function getStaticProps() {
     'http://localhost:1337/big-couch'
   ).then(res => res.json());
 
-  console.log(bigCouchContent);
-
   return {
     props: {
       heroContent,
