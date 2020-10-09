@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { theme as t, ActionButton } from '../../css';
 
 interface IOrder {
   order?: number;
-  feature?: number;
+  featureContent?: any;
 }
 
 const StyledFeature = styled.section`
@@ -96,35 +95,19 @@ const StyledImageContainer = styled.div<IOrder>`
   }
 `;
 
-export default function Feature({ order, feature }: IOrder) {
-  const [heading, setHeading] = useState('Home Decor');
-  const [text, setText] = useState(
-    'Get Inspired with Stylish Pieces to Bring Elegance to Your Home'
-  );
-
-  useEffect(() => {
-    if (feature && feature === 2) {
-      setHeading('Kitchen');
-      setText('Redefine Your Kitchen Space with Stunning Accessories');
-    }
-  }, [feature]);
-
+export default function Feature({ order, featureContent }: IOrder) {
   return (
     <StyledFeature>
       <StyledTextContainer order={order}>
-        <h2>{heading}</h2>
+        <h2>{featureContent.heading}</h2>
         <p>
-          <span>{text}</span>
+          <span>{featureContent.small_text}</span>
         </p>
         <ActionButton variant='secondary'>Coming Soon</ActionButton>
       </StyledTextContainer>
       <StyledImageContainer order={order}>
         <img
-          src={
-            feature && feature === 2
-              ? '/pexels-terry-magallanes-3623785.jpg'
-              : '/pexels-vlada-karpovich-4050318.jpg'
-          }
+          src={`http://localhost:1337${featureContent.feature_image.formats.large.url}`}
           alt='Feature Image'
         />
       </StyledImageContainer>
