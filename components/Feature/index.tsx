@@ -119,7 +119,7 @@ export default function Feature({ order, featureContent }: IOrder) {
         <ActionButton variant='secondary'>Coming Soon</ActionButton>
       </StyledTextContainer>
       <StyledImageContainer order={order}>
-        <img src={`http://localhost:1337${url}`} alt='Feature Image' />
+        <img src={`${process.env.API_URL}${url}`} alt='Feature Image' />
       </StyledImageContainer>
     </StyledFeature>
   );

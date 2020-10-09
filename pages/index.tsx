@@ -43,28 +43,28 @@ export default function Home({
 
 export async function getStaticProps() {
   // fetching hero content
-  const heroContent = await fetch('http://localhost:1337/hero').then(res =>
+  const heroContent = await fetch(`${process.env.API_URL}/hero`).then(res =>
     res.json()
   );
 
   // fetching feature 1 content
   const feature1Content = await fetch(
-    'http://localhost:1337/feature-1'
+    `${process.env.API_URL}/feature-1`
   ).then(res => res.json());
 
   // fetching feature 2 content
   const feature2Content = await fetch(
-    'http://localhost:1337/feature-2'
+    `${process.env.API_URL}/feature-2`
   ).then(res => res.json());
 
   // fetching big couch content
   const bigCouchContent = await fetch(
-    'http://localhost:1337/big-couch'
+    `${process.env.API_URL}/big-couch`
   ).then(res => res.json());
 
   // fetching new arrivals
   const newArrivals = await fetch(
-    'http://localhost:1337/products?new_arrival=true'
+    `${process.env.API_URL}/products?new_arrival=true`
   ).then(res => res.json());
 
   return {
