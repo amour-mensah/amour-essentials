@@ -91,6 +91,7 @@ const Italicized = styled.span`
 `;
 
 export default function Hero({ heroContent }: HeroProps) {
+  // destructuring required data from hero content
   const {
     heading,
     small_text,

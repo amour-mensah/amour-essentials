@@ -96,20 +96,28 @@ const StyledImageContainer = styled.div<IOrder>`
 `;
 
 export default function Feature({ order, featureContent }: IOrder) {
+  // destructuring needed data out of feature content
+  const {
+    heading,
+    small_text,
+    feature_image: {
+      formats: {
+        large: { url }
+      }
+    }
+  } = featureContent;
+
   return (
     <StyledFeature>
       <StyledTextContainer order={order}>
-        <h2>{featureContent.heading}</h2>
+        <h2>{heading}</h2>
         <p>
-          <span>{featureContent.small_text}</span>
+          <span>{small_text}</span>
         </p>
         <ActionButton variant='secondary'>Coming Soon</ActionButton>
       </StyledTextContainer>
       <StyledImageContainer order={order}>
-        <img
-          src={`http://localhost:1337${featureContent.feature_image.formats.large.url}`}
-          alt='Feature Image'
-        />
+        <img src={`http://localhost:1337${url}`} alt='Feature Image' />
       </StyledImageContainer>
     </StyledFeature>
   );
