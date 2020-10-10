@@ -162,6 +162,8 @@ export const ButtonWrapper = styled.div`
 export const StyledShareFeedback = styled.div`
   ${surveyWrapper};
 
+  padding-bottom: 2.5rem;
+
   p {
     margin-bottom: 1rem;
     line-height: 1.3;
@@ -257,6 +259,8 @@ export const FeedbackContainer = styled.div`
 // Confirm Address step
 export const StyledConfirmAddress = styled.div`
   ${surveyWrapper};
+
+  padding-bottom: 2.5rem;
 
   form {
     width: 100%;
