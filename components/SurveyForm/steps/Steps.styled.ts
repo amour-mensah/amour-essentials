@@ -43,6 +43,8 @@ export const StyledOrderId = styled.div`
 // Product Experience step
 export const StyledExperience = styled.div`
   ${surveyWrapper};
+
+  padding-bottom: 2.5rem;
 `;
 
 // Satisfaction in Product Experience
@@ -119,10 +121,8 @@ export const StyledRating = styled.div`
   ${styledRadio}
 
   label {
-    @media (max-width: 1024px) {
-      width: 3rem;
-      padding: 0.8rem;
-    }
+    width: 3rem;
+    padding: 0.8rem;
 
     @media (max-width: 768px) {
       width: 2rem;
