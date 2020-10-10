@@ -13,6 +13,8 @@ export default function SurveyForm() {
   const [feedback, setFeedback] = React.useState('');
   const [address, setAddress] = React.useState({});
 
+  const [error, setError] = useState(false);
+
   const nextStep = () => {
     setStep(step + 1);
   };
@@ -33,6 +35,8 @@ export default function SurveyForm() {
           orderId={orderId}
           setOrderId={setOrderId}
           nextStep={nextStep}
+          error={error}
+          setError={setError}
         />
       );
     case 2:
