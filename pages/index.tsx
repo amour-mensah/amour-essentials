@@ -44,27 +44,27 @@ export default function Home({
 export async function getStaticProps() {
   // fetching hero content
   const heroContent = await fetch(
-    `${process.env.API_URL}/hero?token=${process.env.TOKEN}`
+    `${process.env.NEXT_PUBLIC_API_URL}/hero?token=${process.env.NEXT_PUBLIC_TOKEN}`
   ).then(res => res.json());
 
   // fetching feature 1 content
   const feature1Content = await fetch(
-    `${process.env.API_URL}/feature-1?token=${process.env.TOKEN}`
+    `${process.env.NEXT_PUBLIC_API_URL}/feature-1?token=${process.env.NEXT_PUBLIC_TOKEN}`
   ).then(res => res.json());
 
   // fetching feature 2 content
   const feature2Content = await fetch(
-    `${process.env.API_URL}/feature-2?token=${process.env.TOKEN}`
+    `${process.env.NEXT_PUBLIC_API_URL}/feature-2?token=${process.env.NEXT_PUBLIC_TOKEN}`
   ).then(res => res.json());
 
   // fetching big couch content
   const bigCouchContent = await fetch(
-    `${process.env.API_URL}/big-couch?token=${process.env.TOKEN}`
+    `${process.env.NEXT_PUBLIC_API_URL}/big-couch?token=${process.env.NEXT_PUBLIC_TOKEN}`
   ).then(res => res.json());
 
   // fetching new arrivals
   const newArrivals = await fetch(
-    `${process.env.API_URL}/products?new_arrival=true&token=${process.env.TOKEN}`
+    `${process.env.NEXT_PUBLIC_API_URL}/products?new_arrival=true&token=${process.env.NEXT_PUBLIC_TOKEN}`
   ).then(res => res.json());
 
   return {
