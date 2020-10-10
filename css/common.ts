@@ -60,7 +60,7 @@ export const surveyWrapper = css`
   text-align: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 1rem;
-  padding: 2.5rem;
+  padding: 2.5rem 2.5rem 0.5rem 2.5rem;
 
   @media (max-width: 425px) {
     width: 90%;

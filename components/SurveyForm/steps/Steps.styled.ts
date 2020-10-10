@@ -320,3 +320,10 @@ export const StyledSuccess = styled.div`
     line-height: 2;
   }
 `;
+
+export const Error = styled.p`
+  color: #ff0000;
+  height: 1rem;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+`;

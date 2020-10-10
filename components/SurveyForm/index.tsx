@@ -9,6 +9,7 @@ import Success from './steps/Success';
 export default function SurveyForm() {
   const [step, setStep] = React.useState(1);
   const [orderId, setOrderId] = React.useState('');
+  const [order, setOrder] = useState({});
   const [experience, setExperience] = React.useState({});
   const [feedback, setFeedback] = React.useState('');
   const [address, setAddress] = React.useState({});
@@ -16,6 +17,10 @@ export default function SurveyForm() {
   const [error, setError] = useState(false);
 
   const nextStep = () => {
+    if (error) {
+      return;
+    }
+
     setStep(step + 1);
   };
 
@@ -35,8 +40,8 @@ export default function SurveyForm() {
           orderId={orderId}
           setOrderId={setOrderId}
           nextStep={nextStep}
-          error={error}
           setError={setError}
+          setOrder={setOrder}
         />
       );
     case 2:
