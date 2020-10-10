@@ -1,23 +1,49 @@
-import React from 'react';
+import { useState } from 'react';
 import { ActionButton } from '../../../css';
-import { StyledOrderId } from './Steps.styled';
+import { StyledOrderId, Error } from './Steps.styled';
 
 interface OrderIdProps {
   orderId: string;
   setOrderId: any;
   nextStep: any;
+  setError: any;
+  setOrder: any;
 }
 
 export default function OrderId({
   orderId,
   setOrderId,
-  nextStep
+  nextStep,
+  setError,
+  setOrder
 }: OrderIdProps) {
+  const [orderIdError, setOrderIdError] = useState('');
+
   // Authenticate order ID
-  const AuthenticateOrderId = e => {
+  const AuthenticateOrderId = async e => {
     e.preventDefault();
-    // Validate orderId
-    // Handle real authentication in here
+    // Validate and authenticate orderId
+    const order = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/orders?order_id=${orderId}&token=${process.env.NEXT_PUBLIC_TOKEN}`
+    )
+      .then(res => res.json())
+      .catch(err => 'Order ID not found');
+
+    if (order === 'Order ID not found') {
+      setError(true);
+      setOrderIdError('Please enter a valid order ID');
+      return;
+    }
+
+    if (order.claimed) {
+      setError(true);
+      setOrderIdError('Order ID already claimed');
+      return;
+    }
+
+    setError(false);
+    setOrderIdError('');
+    setOrder(order);
     nextStep();
   };
 
@@ -33,6 +59,7 @@ export default function OrderId({
           onChange={e => setOrderId(e.target.value)}
         />
         <ActionButton variant='secondary'>Authenticate</ActionButton>
+        <Error>{orderIdError ? orderIdError : null}</Error>
       </form>
     </StyledOrderId>
   );
