@@ -1,4 +1,3 @@
-import React from 'react';
 import { ActionButton } from '../../../css';
 import {
   ButtonWrapper,
@@ -11,6 +10,8 @@ interface ConfirmAddressProps {
   setAddress: any;
   nextStep: any;
   prevStep: any;
+  customer: any;
+  setCustomer: any;
   finalSubmission: any;
 }
 
@@ -27,6 +28,8 @@ export default function ConfirmAddress({
   setAddress,
   nextStep,
   prevStep,
+  customer,
+  setCustomer,
   finalSubmission
 }) {
   const handleChange = e => {
@@ -35,11 +38,46 @@ export default function ConfirmAddress({
     setAddress(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const submitAddress = e => {
-    e.preventDefault();
-    // Do submissions here
-    finalSubmission();
-    nextStep();
+  const submitAddress = async e => {
+    await e.preventDefault();
+
+    // search for customer
+    const searchedCustomer = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/customers?email=${address.email}&token=${process.env.NEXT_PUBLIC_TOKEN}`
+    ).then(res => res.json());
+
+    console.log('searched customer: ', searchedCustomer);
+
+    // check if no customer was found
+    if (searchedCustomer.length === 0) {
+      // create customer
+      const createdCustomer = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/customers?token=${process.env.NEXT_PUBLIC_TOKEN}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(address)
+        }
+      ).then(res => res.json());
+
+      console.log('created customer: ', createdCustomer);
+
+      // check if there was an error when creating customer
+      if (createdCustomer.error) {
+        // terminate function if there was an error
+        return;
+      } else {
+        // set the customer to the created result
+        setCustomer(createdCustomer);
+        await finalSubmission(createdCustomer.id);
+      }
+    } else {
+      // set the customer to the searched result
+      setCustomer(searchedCustomer[0]);
+      await finalSubmission(searchedCustomer[0].id);
+    }
   };
 
   return (
@@ -56,13 +94,13 @@ export default function ConfirmAddress({
           required
         />
         <FormField
-          name='address1'
+          name='address_1'
           value={address.address1}
           handleChange={handleChange}
           required
         />
         <FormField
-          name='address2'
+          name='address_2'
           value={address.address2}
           handleChange={handleChange}
         />
@@ -79,7 +117,7 @@ export default function ConfirmAddress({
           required
         />
         <FormField
-          name='postalCode'
+          name='postal_code'
           value={address.postalCode}
           handleChange={handleChange}
           required

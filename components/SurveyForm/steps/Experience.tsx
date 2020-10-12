@@ -24,12 +24,16 @@ export default function Experience({
   const handleChange = e => {
     const { name, value } = e.target;
 
-    setExperience(prevState => ({ ...prevState, [name]: value }));
+    // make sure rating value is a number rather than a string
+    if (name === 'rating') {
+      setExperience(prevState => ({ ...prevState, rating: parseInt(value) }));
+    } else {
+      setExperience(prevState => ({ ...prevState, [name]: value }));
+    }
   };
 
   const submitExperience = e => {
     e.preventDefault();
-    // Handle submission here
     nextStep();
   };
 
@@ -111,11 +115,11 @@ export default function Experience({
               <input
                 type='radio'
                 name='rating'
-                id={`${rating}`}
+                id={rating}
                 value={rating}
                 onChange={handleChange}
               />
-              <label htmlFor={`${rating}`}>{rating}</label>
+              <label htmlFor={rating}>{rating}</label>
             </React.Fragment>
           ))}
         </StyledRating>
