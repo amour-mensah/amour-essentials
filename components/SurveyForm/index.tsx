@@ -5,6 +5,7 @@ import Experience from './steps/Experience';
 import ShareFeedback from './steps/ShareFeedback';
 import ConfirmAddress from './steps/ConfirmAddress';
 import Success from './steps/Success';
+import { createSurvey } from '../../utils/requests';
 
 export default function SurveyForm() {
   const [step, setStep] = useState(1);
@@ -30,40 +31,15 @@ export default function SurveyForm() {
   };
 
   const finalSubmission = async customerId => {
-    const surveyData = {
+    const survey = {
       order_id: orderId,
       ...experience,
       feedback,
       order: order.id,
       customer: customerId
     };
-    // create a survey entry
-    const createdSurvey = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/surveys?token=${process.env.NEXT_PUBLIC_TOKEN}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(surveyData)
-      }
-    )
-      .then(res => res.json())
-      .then(() => {
-        // update order to claimed
-        return fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/orders/${order.id}?token=${process.env.NEXT_PUBLIC_TOKEN}`,
-          {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              claimed: true
-            })
-          }
-        ).then(() => 'Order claimed');
-      });
+    // create a survey entry by passing survey and the order DB id(separate from the orderId from amazon)
+    const createdSurvey = createSurvey(survey, order.id)
 
     if (createdSurvey.statusCode === 500) {
       return;

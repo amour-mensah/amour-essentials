@@ -1,4 +1,5 @@
 import { ActionButton } from '../../../css';
+import { createCustomer, fetchCustomer } from '../../../utils/requests';
 import {
   ButtonWrapper,
   StyledConfirmAddress,
@@ -42,27 +43,12 @@ export default function ConfirmAddress({
     await e.preventDefault();
 
     // search for customer
-    const searchedCustomer = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/customers?email=${address.email}&token=${process.env.NEXT_PUBLIC_TOKEN}`
-    ).then(res => res.json());
-
-    console.log('searched customer: ', searchedCustomer);
+    const fetchedCustomer = await fetchCustomer(address.email);
 
     // check if no customer was found
-    if (searchedCustomer.length === 0) {
+    if (fetchedCustomer.length === 0) {
       // create customer
-      const createdCustomer = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/customers?token=${process.env.NEXT_PUBLIC_TOKEN}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(address)
-        }
-      ).then(res => res.json());
-
-      console.log('created customer: ', createdCustomer);
+      const createdCustomer = await createCustomer(address);
 
       // check if there was an error when creating customer
       if (createdCustomer.error) {
@@ -75,8 +61,8 @@ export default function ConfirmAddress({
       }
     } else {
       // set the customer to the searched result
-      setCustomer(searchedCustomer[0]);
-      await finalSubmission(searchedCustomer[0].id);
+      setCustomer(fetchedCustomer[0]);
+      await finalSubmission(fetchedCustomer[0].id);
     }
   };
 

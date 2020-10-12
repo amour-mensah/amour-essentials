@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ActionButton } from '../../../css';
+import { fetchOrder } from '../../../utils/requests';
 import { StyledOrderId, Error } from './Steps.styled';
 
 interface OrderIdProps {
@@ -22,12 +23,8 @@ export default function OrderId({
   // Authenticate order ID
   const AuthenticateOrderId = async e => {
     e.preventDefault();
-    // Validate and authenticate orderId
-    const order = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/orders?order_id=${orderId}&token=${process.env.NEXT_PUBLIC_TOKEN}`
-    )
-      .then(res => res.json())
-      .catch(err => 'Order ID not found');
+    // Validate and authenticate amazon orderId
+    const order = await fetchOrder(orderId);
 
     if (order === 'Order ID not found') {
       setError(true);
