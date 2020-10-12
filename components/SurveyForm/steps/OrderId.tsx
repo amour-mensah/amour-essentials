@@ -43,7 +43,7 @@ export default function OrderId({
 
     setError(false);
     setOrderIdError('');
-    setOrder(order);
+    setOrder(order[0]);
     nextStep();
   };
 

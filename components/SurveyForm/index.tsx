@@ -1,5 +1,5 @@
 // import * as React from 'react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import OrderId from './steps/OrderId';
 import Experience from './steps/Experience';
 import ShareFeedback from './steps/ShareFeedback';
@@ -7,12 +7,13 @@ import ConfirmAddress from './steps/ConfirmAddress';
 import Success from './steps/Success';
 
 export default function SurveyForm() {
-  const [step, setStep] = React.useState(1);
-  const [orderId, setOrderId] = React.useState('');
-  const [order, setOrder] = useState({});
-  const [experience, setExperience] = React.useState({});
-  const [feedback, setFeedback] = React.useState('');
-  const [address, setAddress] = React.useState({});
+  const [step, setStep] = useState(1);
+  const [orderId, setOrderId] = useState(null);
+  const [order, setOrder] = useState(null);
+  const [experience, setExperience] = useState({});
+  const [feedback, setFeedback] = useState(null);
+  const [address, setAddress] = useState({});
+  const [customer, setCustomer] = useState({});
 
   const [error, setError] = useState(false);
 
@@ -28,9 +29,47 @@ export default function SurveyForm() {
     setStep(step - 1);
   };
 
-  const finalSubmission = () => {
-    // Do final submission here
-    alert(JSON.stringify({ orderId, ...experience, feedback, ...address }));
+  const finalSubmission = async customerId => {
+    const surveyData = {
+      order_id: orderId,
+      ...experience,
+      feedback,
+      order: order.id,
+      customer: customerId
+    };
+    // create a survey entry
+    const createdSurvey = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/surveys?token=${process.env.NEXT_PUBLIC_TOKEN}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(surveyData)
+      }
+    )
+      .then(res => res.json())
+      .then(() => {
+        // update order to claimed
+        return fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/orders/${order.id}?token=${process.env.NEXT_PUBLIC_TOKEN}`,
+          {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              claimed: true
+            })
+          }
+        ).then(() => 'Order claimed');
+      });
+
+    if (createdSurvey.statusCode === 500) {
+      return;
+    } else {
+      nextStep();
+    }
   };
 
   switch (step) {
@@ -69,6 +108,8 @@ export default function SurveyForm() {
           setAddress={setAddress}
           nextStep={nextStep}
           prevStep={prevStep}
+          customer={customer}
+          setCustomer={setCustomer}
           finalSubmission={finalSubmission}
         />
       );
