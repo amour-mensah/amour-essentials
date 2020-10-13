@@ -101,6 +101,10 @@ export const StyledExperienceDescription = styled.div`
     font-size: 1.2rem;
     border: none;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+      0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+      0 3px 6px rgba(0, 0, 0, 0.23);
     border: 1px solid transparent;
     border-radius: 1rem;
     transition: border ease-in-out 0.2s;
@@ -212,6 +216,10 @@ export const FeedbackContainer = styled.div`
     padding: 1rem;
     font-size: 1.2rem;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+      0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+      0 3px 6px rgba(0, 0, 0, 0.23);
     border: 1px solid transparent;
     transition: border ease-in-out 0.2s;
 
@@ -233,6 +241,10 @@ export const FeedbackContainer = styled.div`
     padding: 1rem;
     text-decoration: none;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+      0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+      0 3px 6px rgba(0, 0, 0, 0.23);
     border: 1px solid transparent;
     border-radius: 1rem;
     background-color: ${t.colors.lightGrey};
@@ -300,6 +312,10 @@ export const StyledFormField = styled.div`
     border: none;
     border: 1px solid transparent;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+      0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+      0 3px 6px rgba(0, 0, 0, 0.23);
     border-radius: 0.8em;
     padding: 1rem;
 

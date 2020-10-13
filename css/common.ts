@@ -59,6 +59,9 @@ export const surveyWrapper = css`
   width: 65%;
   text-align: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 1rem;
   padding: 2.5rem 2.5rem 0.5rem 2.5rem;
 
@@ -108,13 +111,7 @@ export const surveyWrapper = css`
 
 export const styledRadio = css`
   input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: 0;
-    outline: none;
-    border: 1px solid transparent;
-    background-color: transparent;
+    display: none;
   }
 
   label {
