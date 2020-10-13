@@ -273,7 +273,7 @@ export const StyledFormField = styled.div`
   margin: 0.8rem auto;
   display: grid;
   align-items: center;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 150px 1fr;
   grid-column-gap: 2.5rem;
 
   @media (max-width: 1024px) {
@@ -330,4 +330,34 @@ export const Error = styled.p`
   height: 1rem;
   font-size: 0.8rem;
   margin-top: 1rem;
+  margin-bottom: 1rem !important;
+`;
+
+export const Loading = styled.div`
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid ${t.colors.primary};
+    border-color: ${t.colors.primary} transparent ${t.colors.primary}
+      transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;

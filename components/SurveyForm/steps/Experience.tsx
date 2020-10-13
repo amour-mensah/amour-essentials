@@ -1,4 +1,5 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { ActionButton } from '../../../css';
 import {
   StyledExperience,
@@ -13,14 +14,18 @@ interface ExperienceProps {
   setExperience: any;
   nextStep: any;
   prevStep: any;
+  setLoading: any;
 }
 
 export default function Experience({
   experience,
   setExperience,
   nextStep,
-  prevStep
+  prevStep,
+  setLoading
 }: ExperienceProps) {
+  const { register } = useForm();
+
   const handleChange = e => {
     const { name, value } = e.target;
 
@@ -34,6 +39,8 @@ export default function Experience({
 
   const submitExperience = e => {
     e.preventDefault();
+    setLoading(true);
+    setLoading(false);
     nextStep();
   };
 
@@ -55,6 +62,7 @@ export default function Experience({
             id='i-love-it'
             value='i love it'
             onChange={handleChange}
+            ref={register({ required: true })}
           />
           <label htmlFor='i-love-it'>I Love It</label>
 
@@ -64,6 +72,7 @@ export default function Experience({
             id='i-like-it'
             value='i like it'
             onChange={handleChange}
+            ref={register({ required: true })}
           />
           <label htmlFor='i-like-it'>I Like It</label>
 
@@ -73,6 +82,7 @@ export default function Experience({
             id='its-okay'
             value='its okay'
             onChange={handleChange}
+            ref={register({ required: true })}
           />
           <label htmlFor='its-okay'>Its Okay</label>
 
@@ -82,6 +92,7 @@ export default function Experience({
             id='dont-like-it'
             value="don't like it"
             onChange={handleChange}
+            ref={register({ required: true })}
           />
           <label htmlFor='dont-like-it'>Don't Like It</label>
 
@@ -105,6 +116,7 @@ export default function Experience({
             id='experience'
             value={experience.experience}
             onChange={handleChange}
+            ref={register({ required: true })}
           />
         </StyledExperienceDescription>
         <StyledRating>
@@ -118,6 +130,7 @@ export default function Experience({
                 id={rating}
                 value={rating}
                 onChange={handleChange}
+                ref={register({ required: true })}
               />
               <label htmlFor={rating}>{rating}</label>
             </React.Fragment>

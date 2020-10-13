@@ -12,9 +12,10 @@
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "next": "9.5.3",
+    "next": "^9.5.5",
     "react": "^16.13.1",
     "react-dom": "16.13.1",
+    "react-hook-form": "^6.9.2",
     "react-slick": "^0.27.11",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.0"
