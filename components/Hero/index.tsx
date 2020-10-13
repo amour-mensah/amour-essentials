@@ -46,8 +46,8 @@ const StyledHeroCTA = styled.div`
     width: 90%;
   }
 
-  @media (max-height: 520px) {
-    top: 70%;
+  @media (min-height: 450px) {
+    top: 65%;
   }
 
   h1 {
@@ -86,8 +86,8 @@ const StyledHeroCTA = styled.div`
       font-size: 1.4rem;
     }
 
-    @media (max-height: 520px) {
-      margin-bottom: 2rem;
+    @media (min-height: 450px) {
+      margin-bottom: 1rem;
     }
   }
 `;
