@@ -127,12 +127,12 @@ export default function Experience({
               <input
                 type='radio'
                 name='rating'
-                id={rating}
+                id={`${rating}`}
                 value={rating}
                 onChange={handleChange}
                 ref={register({ required: true })}
               />
-              <label htmlFor={rating}>{rating}</label>
+              <label htmlFor={`${rating}`}>{rating}</label>
             </React.Fragment>
           ))}
         </StyledRating>
