@@ -46,7 +46,7 @@ const StyledHeroCTA = styled.div`
     width: 90%;
   }
 
-  @media (min-height: 450px) {
+  @media (max-height: 570px) {
     top: 65%;
   }
 
@@ -86,7 +86,7 @@ const StyledHeroCTA = styled.div`
       font-size: 1.4rem;
     }
 
-    @media (min-height: 450px) {
+    @media (max-height: 570px) {
       margin-bottom: 1rem;
     }
   }
