@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ActionButton } from '../../../css';
 import { fetchOrder } from '../../../utils/requests';
 import { StyledOrderId, Error } from './Steps.styled';
@@ -7,41 +6,48 @@ interface OrderIdProps {
   orderId: string;
   setOrderId: any;
   nextStep: any;
-  setError: any;
+  // setError: any;
+  orderIdError: string;
+  setOrderIdError: any;
   setOrder: any;
+  setLoading: any;
 }
 
 export default function OrderId({
   orderId,
   setOrderId,
   nextStep,
-  setError,
-  setOrder
+  orderIdError,
+  setOrderIdError,
+  setOrder,
+  setLoading
 }: OrderIdProps) {
-  const [orderIdError, setOrderIdError] = useState('');
-
   // Authenticate order ID
   const AuthenticateOrderId = async e => {
     e.preventDefault();
+
+    setLoading(true);
+
     // Validate and authenticate amazon orderId
     const order = await fetchOrder(orderId);
 
-    if (order === 'Order ID not found') {
-      setError(true);
+    if (!Array.isArray(order) || !order.length) {
       setOrderIdError('Please enter a valid order ID');
+      // setError(true);
+      setLoading(false);
       return;
-    }
-
-    if (order.claimed) {
-      setError(true);
+    } else if (order[0].claimed) {
       setOrderIdError('Order ID already claimed');
+      // setError(true);
+      setLoading(false);
       return;
+    } else {
+      setOrderIdError('');
+      // setError(false);
+      setLoading(false);
+      setOrder(order[0]);
+      await nextStep();
     }
-
-    setError(false);
-    setOrderIdError('');
-    setOrder(order[0]);
-    nextStep();
   };
 
   return (

@@ -1,7 +1,9 @@
+import { useForm } from 'react-hook-form';
 import { ActionButton } from '../../../css';
 import { createCustomer, fetchCustomer } from '../../../utils/requests';
 import {
   ButtonWrapper,
+  Error,
   StyledConfirmAddress,
   StyledFormField
 } from './Steps.styled';
@@ -13,15 +15,20 @@ interface ConfirmAddressProps {
   prevStep: any;
   customer: any;
   setCustomer: any;
+  setLoading: any;
+  fieldError: string;
+  setFieldError: any;
   finalSubmission: any;
 }
 
 interface FormFieldProps {
   name: string;
+  text: string;
   value: string;
   handleChange: any;
   required?: boolean;
   type?: string;
+  ref: any;
 }
 
 export default function ConfirmAddress({
@@ -31,8 +38,13 @@ export default function ConfirmAddress({
   prevStep,
   customer,
   setCustomer,
+  setLoading,
+  fieldError,
+  setFieldError,
   finalSubmission
 }) {
+  const { register } = useForm();
+
   const handleChange = e => {
     const { name, value } = e.target;
 
@@ -41,6 +53,8 @@ export default function ConfirmAddress({
 
   const submitAddress = async e => {
     await e.preventDefault();
+
+    setLoading(true);
 
     // search for customer
     const fetchedCustomer = await fetchCustomer(address.email);
@@ -51,7 +65,12 @@ export default function ConfirmAddress({
       const createdCustomer = await createCustomer(address);
 
       // check if there was an error when creating customer
-      if (createdCustomer.error) {
+      if (
+        createdCustomer.error &&
+        createdCustomer.message === 'ValidationError'
+      ) {
+        setFieldError('Please fill all required fields');
+        setLoading(false);
         // terminate function if there was an error
         return;
       } else {
@@ -75,46 +94,62 @@ export default function ConfirmAddress({
       <form onSubmit={submitAddress}>
         <FormField
           name='name'
+          text='Name'
           value={address.name}
           handleChange={handleChange}
           required
+          ref={register({ required: true })}
         />
         <FormField
           name='address_1'
+          text='Address 1'
           value={address.address1}
           handleChange={handleChange}
           required
+          ref={register({ required: true })}
         />
         <FormField
           name='address_2'
+          text='Address 2'
           value={address.address2}
           handleChange={handleChange}
+          ref={register()}
         />
         <FormField
           name='city'
+          text='City'
           value={address.city}
           handleChange={handleChange}
           required
+          ref={register({ required: true })}
         />
         <FormField
           name='province'
+          text='Province/State'
           value={address.province}
           handleChange={handleChange}
           required
+          ref={register({ required: true })}
         />
         <FormField
           name='postal_code'
+          text='Postal/Zipcode'
           value={address.postalCode}
           handleChange={handleChange}
           required
+          ref={register({ required: true })}
         />
         <FormField
           name='email'
+          text='Email'
           value={address.email}
           handleChange={handleChange}
           required
           type='email'
+          ref={register({ required: true })}
         />
+        <Error>{fieldError}</Error>
+        {/* <p style={{ textAlign: 'left', fontSize: '12px' }}>* - Required</p> */}
         <ButtonWrapper>
           <span onClick={prevStep}>&larr; Prev Step</span>
           <ActionButton variant='white' style={{ marginTop: '100px' }}>
@@ -129,15 +164,17 @@ export default function ConfirmAddress({
 // form field component
 function FormField({
   name,
+  text,
   value,
   handleChange,
   required,
-  type
+  type,
+  ref
 }: FormFieldProps) {
   return (
     <StyledFormField>
       <label htmlFor='name'>
-        {required ? `${name.toUpperCase()}*` : name.toUpperCase()}
+        {required ? `${text.toUpperCase()}*` : text.toUpperCase()}
       </label>
       <input
         type={type ? type : 'text'}
@@ -145,6 +182,7 @@ function FormField({
         id={name}
         value={value}
         onChange={handleChange}
+        ref={ref}
       />
     </StyledFormField>
   );

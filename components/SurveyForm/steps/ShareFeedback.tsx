@@ -11,13 +11,15 @@ interface ShareFeedbackProps {
   setFeedback: any;
   nextStep: any;
   prevStep: any;
+  setLoading: any;
 }
 
 export default function ShareFeedback({
   feedback,
   setFeedback,
   nextStep,
-  prevStep
+  prevStep,
+  setLoading
 }) {
   const handleChange = e => {
     setFeedback(e.target.value);
@@ -25,7 +27,8 @@ export default function ShareFeedback({
 
   const submitFeedback = e => {
     e.preventDefault();
-    // Handle feedback submission
+    setLoading(true);
+    setLoading(false);
     nextStep();
   };
 
