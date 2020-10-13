@@ -11,9 +11,15 @@ interface HeroImage {
 
 const StyledHero = styled.section<HeroImage>`
   ${props => {
-    return `
-      background-image: url("${process.env.NEXT_PUBLIC_API_URL}${props.image}?token=${process.env.NEXT_PUBLIC_TOKEN}");
-    `;
+    if (process.env.NODE_ENV === 'production') {
+      return `
+        background-image: url("${props.image}");
+      `;
+    } else {
+      return `
+        background-image: url("${process.env.NEXT_PUBLIC_API_URL}${props.image}?token=${process.env.NEXT_PUBLIC_TOKEN}");
+      `;
+    }
   }};
   background-repeat: no-repeat;
   background-position: center center;

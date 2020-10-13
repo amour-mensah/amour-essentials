@@ -24,14 +24,27 @@ const StyledProductImage = styled.div<ProductImageProps>`
   height: 22rem;
   margin: 0 auto 2rem auto;
   ${props => {
+    // check if image is passed to component
     if (props.image) {
-      return `
-        background-image: url("${process.env.NEXT_PUBLIC_API_URL}${props.image}?token=${process.env.NEXT_PUBLIC_TOKEN}");
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      `;
+      // check if node environment is production
+      if (process.env.NODE_ENV === 'production') {
+        return `
+          background-image: url("${props.image}");
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        `;
+      } else {
+        // return if node environment isn't production
+        return `
+          background-image: url("${process.env.NEXT_PUBLIC_API_URL}${props.image}?token=${process.env.NEXT_PUBLIC_TOKEN}");
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        `;
+      }
     } else {
+      // return if no image passed to props
       return `
         background-color: ${t.colors.grey};
       `;
