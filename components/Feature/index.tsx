@@ -120,7 +120,11 @@ export default function Feature({ order, featureContent }: IOrder) {
       </StyledTextContainer>
       <StyledImageContainer order={order}>
         <img
-          src={`${process.env.NEXT_PUBLIC_API_URL}${url}?token=${process.env.NEXT_PUBLIC_TOKEN}`}
+          src={
+            process.env.NODE_ENV === 'production'
+              ? `${url}`
+              : `${process.env.NEXT_PUBLIC_API_URL}${url}?token=${process.env.NEXT_PUBLIC_TOKEN}`
+          }
           alt='Feature Image'
         />
       </StyledImageContainer>
