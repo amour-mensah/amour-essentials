@@ -108,10 +108,17 @@ export const surveyWrapper = css`
 
 export const styledRadio = css`
   input {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: transparent;
   }
 
   label {
+    position: relative;
     display: inline-block;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -119,6 +126,7 @@ export const styledRadio = css`
     cursor: pointer;
     background-color: ${t.colors.primary};
     color: ${t.colors.white};
+    border: 1px solid transparent;
     transition: all ease-in-out 0.2s;
 
     &:not(:last-of-type) {
@@ -134,5 +142,10 @@ export const styledRadio = css`
   input[type='radio']:checked + label {
     background-color: ${t.colors.grey};
     color: ${t.colors.white};
+  }
+
+  /* figure out why only one element focuses on tab */
+  input[type='radio']:focus + label {
+    border: 1px solid ${t.colors.black};
   }
 `;
