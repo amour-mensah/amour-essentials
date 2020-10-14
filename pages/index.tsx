@@ -14,7 +14,7 @@ interface HomeProps {
   feature1: any;
   feature2: any;
   bigCouchContent: any;
-  newArrivals: any;
+  newArrivals?: any;
 }
 
 export default function Home({
@@ -41,7 +41,7 @@ export default function Home({
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // fetching hero content
   const heroContent = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/hero?token=${process.env.NEXT_PUBLIC_TOKEN}`

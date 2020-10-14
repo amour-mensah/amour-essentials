@@ -70,8 +70,10 @@ const StyledProductImage = styled.div<ProductImageProps>`
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <StyledProductCard>
-      <StyledProductImage image={product.images[0].formats.small.url} />
-      <p>{product.name}</p>
+      <StyledProductImage
+        image={product ? product.images[0].formats.small.url : null}
+      />
+      <p>{product ? product.name : 'Coming Soon'}</p>
     </StyledProductCard>
   );
 }

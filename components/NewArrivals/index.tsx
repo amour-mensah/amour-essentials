@@ -4,7 +4,7 @@ import { theme as t } from '../../css';
 import ProductCard from '../ProductCard';
 
 interface NewArrivalsProps {
-  newArrivals: any;
+  newArrivals?: any;
 }
 
 const StyledNewArrival = styled.section`
@@ -56,9 +56,13 @@ export default function NewArrivals({ newArrivals }) {
       <h3>New Arrivals</h3>
       <div>
         <Slider {...config}>
-          {newArrivals.map(product => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          {newArrivals && newArrivals.length ? (
+            newArrivals.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          ) : (
+            <ProductCard />
+          )}
         </Slider>
       </div>
     </StyledNewArrival>
