@@ -56,7 +56,7 @@ export default function NewArrivals({ newArrivals }) {
       <h3>New Arrivals</h3>
       <div>
         <Slider {...config}>
-          {newArrivals && newArrivals.length ? (
+          {Array.isArray(newArrivals) && newArrivals.length ? (
             newArrivals.map(product => (
               <ProductCard key={product.id} product={product} />
             ))
