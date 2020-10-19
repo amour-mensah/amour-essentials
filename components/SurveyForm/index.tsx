@@ -22,12 +22,12 @@ export default function SurveyForm() {
   const [fieldError, setFieldError] = useState(null);
   // const [error, setError] = useState(false);
 
-  const nextStep = () => {
+  const nextStep = n => {
     // if (error) {
     //   return;
     // }
 
-    setStep(step + 1);
+    setStep(step + n);
   };
 
   const prevStep = () => {
@@ -46,7 +46,7 @@ export default function SurveyForm() {
     const createdSurvey = await createSurvey(survey, order.id);
 
     setLoading(false);
-    nextStep();
+    nextStep(1);
   };
 
   if (loading) {

@@ -41,7 +41,11 @@ export default function Experience({
     e.preventDefault();
     setLoading(true);
     setLoading(false);
-    nextStep();
+    if (experience.rating < 6) {
+      nextStep(2);
+    } else {
+      nextStep(1);
+    }
   };
 
   const ratings = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];

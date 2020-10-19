@@ -46,7 +46,7 @@ export default function OrderId({
       // setError(false);
       setLoading(false);
       setOrder(order[0]);
-      await nextStep();
+      await nextStep(1);
     }
   };
 

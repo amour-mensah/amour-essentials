@@ -29,7 +29,7 @@ export default function ShareFeedback({
     e.preventDefault();
     setLoading(true);
     setLoading(false);
-    nextStep();
+    nextStep(1);
   };
 
   return (
