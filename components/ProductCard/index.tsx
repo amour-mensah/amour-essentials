@@ -14,12 +14,15 @@ const StyledProductCard = styled.div`
   color: ${t.colors.white};
   text-align: center;
 
-  p {
+  a {
     margin-bottom: 1rem;
+    text-decoration: none;
+    color: ${t.colors.white};
   }
 `;
 
-const StyledProductImage = styled.div<ProductImageProps>`
+const StyledProductImage = styled.a<ProductImageProps>`
+  display: block;
   width: 18rem;
   height: 22rem;
   margin: 0 auto 2rem auto;
@@ -72,8 +75,12 @@ export default function ProductCard({ product }: ProductCardProps) {
     <StyledProductCard>
       <StyledProductImage
         image={product ? product.images[0].formats.small.url : null}
+        href={product ? product.product_url : '#'}
+        target='_blank'
       />
-      <p>{product ? product.name : 'Coming Soon'}</p>
+      <a href={product ? product.product_url : '#'}>
+        {product ? product.name : 'Coming Soon'}
+      </a>
     </StyledProductCard>
   );
 }
