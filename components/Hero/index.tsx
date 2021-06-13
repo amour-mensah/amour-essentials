@@ -41,6 +41,10 @@ const StyledHeroCTA = styled.div`
   width: 80%;
   color: ${t.colors.white};
 
+  @media (max-width: 375px) {
+    margin-top: 1.5rem;
+  }
+
   @media (max-width: 425px) {
     top: 60%;
     width: 90%;
