@@ -13,11 +13,12 @@ const StyledHero = styled.section<HeroImage>`
   ${props => {
     if (process.env.NODE_ENV === 'production') {
       return `
-        background-image: url("${props.image}");
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("${props.image}");
       `;
     } else {
       return `
-        background-image: url("${process.env.NEXT_PUBLIC_API_URL}${props.image}?token=${process.env.NEXT_PUBLIC_TOKEN}");
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("${process.env.NEXT_PUBLIC_API_URL}${props.image}?token=${process.env.NEXT_PUBLIC_TOKEN}");
+        background-blend-mode: multiply;
       `;
     }
   }};
