@@ -41,7 +41,7 @@ export default function Home({
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // fetching hero content
   const heroContent = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/hero?token=${process.env.NEXT_PUBLIC_TOKEN}`
